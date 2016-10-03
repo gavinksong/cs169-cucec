@@ -194,6 +194,7 @@ GEM
     parser (2.3.1.4)
       ast (~> 2.2)
     path_expander (1.0.0)
+    pg (0.19.0)
     pkg-config (1.1.7)
     procto (0.0.3)
     puma (3.6.0)
@@ -335,6 +336,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   metric_fu
+  pg
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rspec-rails (= 2.14)
