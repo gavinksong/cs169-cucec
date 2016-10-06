@@ -4,3 +4,5 @@ rvm:
 addons:
   code_climate:
     repo_token: 59fe92cc0bafc5c327ab3189530bebb087885fa64d2f6fd7a2a49c3170ec4a30
+notifications:
+  slack: tacos169:aK4mpa1pb7ksvkNO9lOoAAcC
