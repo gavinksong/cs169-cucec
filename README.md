@@ -4,6 +4,8 @@
 
 Link to Pivotal Tracker: https://www.pivotaltracker.com/n/projects/1885929
 
+A web app that helps foreign scholars and students to learn English and U.S. Culture.
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
