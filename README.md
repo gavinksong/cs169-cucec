@@ -8,25 +8,6 @@ Link to Heroku App: https://cs169-cucec.herokuapp.com
 
 A web app that helps foreign scholars and students to learn English and U.S. Culture.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Guideline website: https://saasbook.github.io/cs169-f16-projects/#8
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Heroku deployment: https://limitless-escarpment-20701.herokuapp.com/
