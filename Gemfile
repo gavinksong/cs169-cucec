@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Twitter Bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
+# Devise
+gem 'devise'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
