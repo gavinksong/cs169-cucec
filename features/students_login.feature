@@ -5,7 +5,7 @@ Feature: Student Login
   I want to be able to log in to an existing account
   
 Background:
-  Given A student with email "email@gmail.com" and password "mypassword" exists
+  Given a student with email "email@gmail.com" and password "mypassword" exists
   
 Scenario: I am presented with the login screen
   Given I am on the student login page
