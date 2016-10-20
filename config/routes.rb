@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root to: 'pages#index'
   
   match 'services', to: 'pages#services', via: :get
+  
+  match 'template', to: 'pages#template', via: :get
 end
