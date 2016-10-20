@@ -5,7 +5,7 @@ Feature: login as a mentor
   I want to be able to access the login form on the landing page
 
 Background:
-  Given I am already signed up as a mentor
+  Given I am already signed up as a student
 
 Scenario: access login form as a mentor
   Given I am on the home page
