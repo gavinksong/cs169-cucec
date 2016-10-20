@@ -9,6 +9,6 @@ Background:
 
 Scenario: access login form as a mentor
   Given I am on the home page
-  Then I should see "sign in as a mentor"
-  When I press "Sign In as a Mentor"
-  Then I should be on the sign-up page
+  Then I should see "Sign in as a Mentor"
+  When I follow "Sign in as a Mentor"
+  Then I should be on the mentor signup page
