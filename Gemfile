@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.7'
 # Devise
 gem 'devise'
+# Font Awesome
+gem 'font-awesome-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
