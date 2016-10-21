@@ -2,7 +2,7 @@ language: ruby
 rvm:
   - 2.2.2
 addons:
-  code_climate:
-    repo_token: 59fe92cc0bafc5c327ab3189530bebb087885fa64d2f6fd7a2a49c3170ec4a30
+    code_climate:
+      repo_token: d8c7f5c5212175b444a48bd19d9a48dea6fcacf13e6b8b429409f50094576069
 notifications:
   slack: tacos169:aK4mpa1pb7ksvkNO9lOoAAcC
