@@ -23,7 +23,19 @@ module NavigationHelpers
       new_mentor_registration_path
     when /^the student signup page$/
       new_student_registration_path
-
+    when /^the student Listen page$/
+      '/'
+    when /^the student Speak page$/
+      '/'
+    when /^the student Read page$/
+      '/'
+    when /^the student Write page$/
+      '/'
+    when /^the student Watch page$/
+      '/'
+    when /^the student Chat page$/
+      '/'
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
