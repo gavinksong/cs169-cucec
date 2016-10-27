@@ -33,9 +33,10 @@ module NavigationHelpers
       '/'
     when /^the student Watch page$/
       '/'
-    when /^the student Chat page$/
+    when /^the Chat page$/
+      #doing this because there is no need for new chat
+      # chat_path
       '/'
-    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
