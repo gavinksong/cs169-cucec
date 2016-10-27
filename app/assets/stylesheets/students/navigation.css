@@ -8,6 +8,36 @@
     overflow-x: hidden;
  }
 
+/* Navigation Options */
+
+.service-box {
+    background: #fff;
+    border-bottom: 2px solid #f7f7f7;
+    padding: 40px 20px;
+}
+
+.service-box:hover {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin-top: -20px;
+}
+
+.service-icon {
+    margin-bottom: 20px;
+}
+
+.service-desc h5 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.service-desc .divider-header {
+    margin-bottom: 30px;
+}
+
 /* Toggle Styles */
 
 #wrapper {
