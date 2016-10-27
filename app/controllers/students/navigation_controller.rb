@@ -1,0 +1,3 @@
+class NavigationController < ApplicationController
+
+end

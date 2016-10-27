@@ -41,4 +41,8 @@ bower.json
 # Ignore Byebug command history file.
 .byebug_history
 
+# Ignore RubyMine configuration
+.idea
+
+# Ignore Mac's weird file
 .DS_STORE
