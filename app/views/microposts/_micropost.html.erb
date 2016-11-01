@@ -1,0 +1,6 @@
+<li id="micropost-<%= micropost.id %>">
+  <span class="content"><%= micropost.content %></span>
+  <span>
+    Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+  </span>
+</li>

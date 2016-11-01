@@ -1,3 +1,11 @@
 <div class="container">
-    <h1>This is admin</h1>
+    <h2>"Welcome to Admin's page"</h2>
+    <span><%= pluralize(current_admin.microposts.count, "micropost") %></span>
+    <div class="row">
+        <aside class="col-md-4">
+          <section class="micropost_form">
+            <%= render 'shared/micropost_form' %>
+          </section>
+        </aside>
+    </div>
 </div>
