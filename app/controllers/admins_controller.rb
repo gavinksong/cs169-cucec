@@ -3,12 +3,11 @@ class AdminsController < ApplicationController
  
   
   def index 
-      @micropost = current_admin.microposts.build if admin_signed_in?
+    @micropost = current_admin.microposts.build if admin_signed_in?
+    @microposts = current_admin.microposts.paginate(page: params[:page]) if current_admin.microposts
   end
   
   def show
-    @user = Admin.find(params[:id])
-    @microposts = @user.microposts.paginate(page: params[:page]) if @user.microposts
   end
   
   private

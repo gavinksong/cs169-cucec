@@ -1,11 +1,24 @@
-<div class="container">
-    <h2>"Welcome to Admin's page"</h2>
-    <span><%= pluralize(current_admin.microposts.count, "micropost") %></span>
+    <div class="container">
+    <h1> </h1>
+    <!--<span><%= pluralize(current_admin.microposts.count, "micropost") %></span>-->
     <div class="row">
         <aside class="col-md-4">
           <section class="micropost_form">
             <%= render 'shared/micropost_form' %>
           </section>
         </aside>
+
+
+
+
+          <div class="col-md-8">
+            <% if current_admin.microposts.any? %>
+              <h4>Microposts (<%= current_admin.microposts.count %>)</h4>
+              <ol class="microposts">
+                <%= render @microposts %>
+              </ol>
+              <%= will_paginate @microposts %>
+            <% end %>
+          </div>
     </div>
 </div>
