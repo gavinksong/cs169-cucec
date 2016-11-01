@@ -147,6 +147,8 @@ GEM
     gherkin (4.0.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    haml (4.0.7)
+      tilt
     hirb (0.7.3)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -356,6 +358,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   font-awesome-rails
+  haml
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
