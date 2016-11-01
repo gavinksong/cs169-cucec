@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def listen
-    @student = Student.find(params[:id])
+    # @audio = Audio.find('') # attempt to retrieve audio from database
+    @audio = ''
   end
 end
