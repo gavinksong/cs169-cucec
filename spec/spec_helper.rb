@@ -2,7 +2,10 @@ require "codeclimate-test-reporter"
 CodeClimate::TestReporter.start
 
 require 'simplecov'
-SimpleCov.start
+SimpleCov.start do
+  add_filter "/features/"
+  add_filter "/spec/"
+end
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'

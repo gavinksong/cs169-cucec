@@ -6,3 +6,10 @@ addons:
       repo_token: d8c7f5c5212175b444a48bd19d9a48dea6fcacf13e6b8b429409f50094576069
 notifications:
   slack: tacos169:aK4mpa1pb7ksvkNO9lOoAAcC
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec
+  - bundle exec cucumber
+after_script:
+  - bundle exec rake send_to_codeclimate
