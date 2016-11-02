@@ -12,11 +12,20 @@ class MicropostsController < ApplicationController
   end
 
   def destroy
+    @micropost = Micropost.find(params[:id])
+    @micropost.destroy
+    flash[:success] = "Micropost deleted"
+    redirect_to request.referrer || admins_path
   end
   
   private
 
     def micropost_params
       params.require(:micropost).permit(:content)
+    end
+    
+    def correct_admin
+      @micropost = current_admin.microposts.find_by(id: params[:id])
+      redirect_to admins_path if @micropost.nil?
     end
 end

@@ -1,3 +1,9 @@
 <li id="micropost-<%= micropost.id %>">
   <span class="content"><%= micropost.content %></span>
+  <span class="timestamp">
+    <% if micropost.admin %>
+      <%= link_to "delete", micropost, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
 </li>
