@@ -26,8 +26,6 @@ module NavigationHelpers
     when /^the mentor navigation page$/
       '/mentors/index'
     when /^the student Listen page$/
-      # id = 1
-     #  "/students/#{id}/listen"
      listen_path
     when /^the student Speak page$/
       '/'
