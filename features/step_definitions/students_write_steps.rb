@@ -1,7 +1,3 @@
-# Given (/^I am logged in as a "(.*)"$/) do |user|
-#     pending
-# end
-#
-# Then (/^I should see "(.*)" in "(.*)"$/) do |text, box|
-#     pending
-# end
+Then (/^I should see "(.*)" in "(.*)"$/) do |text, box|
+    within("#" + box) {expect(page).to have_content(text)}
+end
