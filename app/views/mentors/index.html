@@ -1,0 +1,78 @@
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="index.html">
+                    Student Name <!--Insert student name here-->
+                </a>
+            </li>
+            <li>
+                <a href="#">Dashboard</a>
+            </li>
+            <li>
+                <a href="#">Points</a>
+            </li>
+            <li>
+                <a href="#">Logout</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <!-- Student Navigation Tabs -->
+                    <div class="row animatedParent">
+
+                        <div class="col-xs-6 col-sm-4 col-md-4">
+                            <div class="service-box">
+                                <div class="service-desc">
+                                    <h5>Voice Call</h5>
+                                    <p>
+                                        Mentor a student through voice call.
+                                    </p>
+                                    <a href="#"  class="btn btn-default">Listen</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-6 col-sm-4 col-md-4">
+                            <div class="service-box">
+                                <div class="service-desc">
+                                    <h5>Chat</h5>
+                                    <p>
+                                        Mentor a student through instant message.
+                                    </p>
+                                    <a href="#"  class="btn btn-default">Speak</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- End of Navigation tabs-->
+                    <br>
+
+                    <p><code>Go to navigation</code></p>
+                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>

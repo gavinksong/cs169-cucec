@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   get 'listen', :to => 'pages#listen'
-  
+  resources :mentors
 end
