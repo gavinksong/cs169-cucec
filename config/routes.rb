@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   authenticate :mentor do
     get '/mentors/index'
   end
+  
+  resources :donate
 end

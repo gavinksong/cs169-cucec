@@ -31,6 +31,10 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+Then /^I should see "([^"]*)" button/ do |name|
+  find_button(name).should_not be_nil
+end
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
