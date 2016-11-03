@@ -23,6 +23,8 @@ module NavigationHelpers
       new_mentor_registration_path
     when /^the student signup page$/
       new_student_registration_path
+    when /^the mentor navigation page$/
+      '/mentors/index'
     when /^the student Listen page$/
       # id = 1
      #  "/students/#{id}/listen"
