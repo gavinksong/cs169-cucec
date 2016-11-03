@@ -6,9 +6,4 @@ class PagesController < ApplicationController
             redirect_to '/mentors/index'
         end
     end
-
-    def listen
-        # @audio = Audio.find('') # attempt to retrieve audio from database
-        @audio = ''
-    end
 end
