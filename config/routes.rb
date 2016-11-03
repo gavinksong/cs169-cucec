@@ -23,5 +23,15 @@ Rails.application.routes.draw do
   resource :student do
     get 'navigation', to: 'students#navigation'
   end
->>>>>>> View refactor
+  resource :students do
+    get 'navigation' => 'students#navigation'
+
+    get 'listening' => 'students#listening'
+    get 'speaking' => 'students#speaking'
+    get 'reading' => 'students#reading'
+    get 'writing' => 'students#writing'
+    get 'chatting' => 'students#chatting'
+    get 'watching' => 'students#watching'
+  end
+
 end

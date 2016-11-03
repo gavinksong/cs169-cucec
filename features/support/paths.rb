@@ -26,24 +26,23 @@ module NavigationHelpers
     when /^the mentor navigation page$/
       '/mentors/index'
     when /^the student navigation page$/
-
+      navigation_students_path
     when /^the student Listen page$/
      listen_path
     when /^the student video page$/ 
       watch_path
     when /^the student Speak page$/
-      '/'
+      speaking_students_path
     when /^the student Read page$/
-      '/'
+      reading_students_path
     when /^the student Write page$/
-      '/'
+      writing_students_path
     when /^the student Watch page$/
-      '/'
+      watching_students_path
     when /^the Chat page$/
       conversations_path
       #doing this because there is no need for new chat
       # chat_path
-      '/'
     when /^the donation page$/
       '/donate/new'
 
