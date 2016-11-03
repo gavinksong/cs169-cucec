@@ -23,6 +23,8 @@ module NavigationHelpers
       new_mentor_registration_path
     when /^the student signup page$/
       new_student_registration_path
+    when /^the student navigation page$/
+
     when /^the student Listen page$/
       '/'
     when /^the student Speak page$/
