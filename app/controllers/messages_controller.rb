@@ -1,8 +1,7 @@
 class MessagesController < ApplicationController
   before_action do
-    @converstaion =
     Conversation.find(params[:conversation_id])
-    end
+  end
 
   # GET /messages
   # GET /messages.json
@@ -18,7 +17,6 @@ class MessagesController < ApplicationController
     #TODO:
   end
 
-  end
 
   private
 
@@ -27,3 +25,4 @@ class MessagesController < ApplicationController
       params.require(:message).permit(:body, :conversation_id, :mentor_id, :student_id, :read)
     end
 end
+
