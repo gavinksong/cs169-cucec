@@ -6,9 +6,7 @@ Feature: Student Listen Page
   
 Background:
   Given I am logged in as a "student"
-  And I am on "the student Listen page"
+  And I am on the student Listen page
   
 Scenario: I can listen to audio
-  Given there is an "audio" file for "listen"
-  And I press "audio"
-  Then I should hear audio playing
+  Then I should see "audio of the day"
