@@ -6,7 +6,7 @@ Feature: Student Reading
   I should also see a translate article in Chinese
 
   Scenario: Reading page articles
-    Given I am on the student reading page
+    Given I am on the student Read page
     Then I should see "Article of the Day"
     Then I should see "中文"
     Then I should see "English"

@@ -15,14 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- Custom CSS -->
-    <link href="../../assets/stylesheets/students/navigation.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="../../assets/stylesheets/students.scss" rel="stylesheet">
 
 </head>
 
@@ -34,7 +27,7 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="navigation.html">
+                <a href="navigation.html.erb">
                     Student Name <!--Insert student name here-->
                 </a>
             </li>
@@ -69,7 +62,7 @@
                                     <p>
                                         Listen to English recordings.
                                     </p>
-                                    <a href="#"  class="btn btn-default">Listen</a>
+                                    <a href= <%= listening_students_path %> class="btn btn-default">Listen</a>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +74,7 @@
                                     <p>
                                         Improve your speaking skills.
                                     </p>
-                                    <a href="#"  class="btn btn-default">Speak</a>
+                                    <a href=<%= speaking_students_path %> class="btn btn-default">Speak</a>
                                 </div>
                             </div>
                         </div>
@@ -93,7 +86,7 @@
                                     <p>
                                         Compare English and Chinese texts.
                                     </p>
-                                    <a href="#"  class="btn btn-default">Read</a>
+                                    <a href=<%= reading_students_path %>  class="btn btn-default">Read</a>
                                 </div>
                             </div>
                         </div>
@@ -105,7 +98,7 @@
                                     <p>
                                         Practice your English writing skills.
                                     </p>
-                                    <a href="#"  class="btn btn-default">Write</a>
+                                    <a href=<%= writing_students_path %>  class="btn btn-default">Write</a>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +110,7 @@
                                     <p>
                                         Watch English movies and videos.
                                     </p>
-                                    <a href="#"  class="btn btn-default">Watch</a>
+                                    <a href=<%= watching_students_path %> class="btn btn-default">Watch</a>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +123,7 @@
                                         Talk to an American mentor through
                                         instant messaging.
                                     </p>
-                                    <a href="#"  class="btn btn-default">Chat</a>
+                                    <a href=<%= chatting_students_path %>  class="btn btn-default">Chat</a>
                                 </div>
                             </div>
                         </div>
@@ -162,6 +155,6 @@
     });
 </script>
 
-</body>
+<!--</body>-->
 
-</html>
+<!--</html>-->
