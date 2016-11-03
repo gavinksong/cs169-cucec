@@ -21,6 +21,12 @@ module NavigationHelpers
       new_student_session_path
     when /^the mentor signup page$/
       new_mentor_registration_path
+      
+    when /^the admin login page$/
+      new_student_session_path
+    when /^the admin page$/
+      admins_path
+
     when /^the student signup page$/
       new_student_registration_path
     when /^the student Listen page$/

@@ -5,7 +5,7 @@
 $( document ).ready ->
     console.log "keydown"
     $("form.new_micropost").find("textarea").keyup ->
-       $("form.new_micropost").find("input[type=submit]").prop(
+      $("form.new_micropost").find("input[type=submit]").prop(
             "disabled",
             $("form.new_micropost").find("textarea").val() == ""
         )

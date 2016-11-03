@@ -10,7 +10,7 @@
 
           <div class="col-md-8">
             <% if current_admin.microposts.any? %>
-              <h4>Microposts (<%= current_admin.microposts.count %>)</h4>
+              <h4>Files (<%= current_admin.microposts.count %>)</h4>
               <ol class="microposts">
                 <%= render @microposts %>
               </ol>
