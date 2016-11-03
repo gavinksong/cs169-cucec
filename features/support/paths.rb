@@ -25,6 +25,8 @@ module NavigationHelpers
       new_student_registration_path
     when /^the mentor navigation page$/
       '/mentors/index'
+    when /^the student navigation page$/
+
     when /^the student Listen page$/
      listen_path
     when /^the student video page$/ 
