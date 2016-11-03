@@ -1,5 +1,2 @@
-class Students::StudentsController < ApplicationController
-  def navigation
-
-  end
+class StudentsController < ApplicationController
 end
