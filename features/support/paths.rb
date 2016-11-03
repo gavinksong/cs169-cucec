@@ -27,6 +27,8 @@ module NavigationHelpers
       '/mentors/index'
     when /^the student Listen page$/
      listen_path
+    when /^the student video page$/ 
+      watch_path
     when /^the student Speak page$/
       '/'
     when /^the student Read page$/
