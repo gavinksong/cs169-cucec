@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :conversations do
+    resources :messages
+  end
   devise_for :mentors
   devise_for :students
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
