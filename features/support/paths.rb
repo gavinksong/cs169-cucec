@@ -45,6 +45,7 @@ module NavigationHelpers
       # chat_path
     when /^the donation page$/
       '/donate/new'
+    when /^the [S|s]tudent [N|n]avigation page$/
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
