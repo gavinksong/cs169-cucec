@@ -45,4 +45,4 @@ bower.json
 .idea
 
 # Ignore Mac's weird file
-.DS_STORE
+.DS_Store
