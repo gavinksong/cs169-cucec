@@ -1,7 +1,7 @@
-Feature: Student Listen Page
+Feature: Student Watch Page
   
   As a student
-  So that I can improve my English listening skills
+  So that I can improve my English skills
   I want to be able to watch an English video
   
 Background:
