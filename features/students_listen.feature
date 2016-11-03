@@ -9,4 +9,4 @@ Background:
   And I am on the student Listen page
   
 Scenario: I can listen to audio
-  Then I should see "audio of the day"
+  Then I should see "Listen to Audio"

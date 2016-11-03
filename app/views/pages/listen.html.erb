@@ -1,6 +1,4 @@
-<section class="container"></section>
+<section class="container">
   <h1>Listen to Audio</h1>
-  <audio controls>
-    <source src="app/audio/katy.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-  </audio>
+  <p><%= audio_tag("katy.mp3", autoplay: false, controls: true)%></p>
+</section>
