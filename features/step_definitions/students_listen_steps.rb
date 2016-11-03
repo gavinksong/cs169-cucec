@@ -6,15 +6,9 @@ Given (/^I am logged in as a "(.*)"$/) do |user|
   click_button 'Log in'
   if page.respond_to? :should
     page.should have_content('China US Cultural Exchange Center')
+    step 'I should be on the home page'
   else
     assert page.has_content?('China US Cultural Exchange Center')
+    step 'I should be on the home page'
   end
-end
-
-Given(/^there is (?: a|an) "([^"]*)" file for "([^"]*)"$/) do |content, feature|
-  step 'I should see "audio file of the day"'
-end
-
-Then(/^I should hear audio playing$/) do 
-    pending
 end
