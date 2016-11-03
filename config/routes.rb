@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   
   resources :donate
 
+  resource :student do
+    get 'navigation', to: 'students#navigation'
+  end
+>>>>>>> View refactor
 end
