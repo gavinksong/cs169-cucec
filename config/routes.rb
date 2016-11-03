@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   root to: 'pages#index'
 
   get 'listen', :to => 'pages#listen'
+  
+  get 'watch', :to => 'pages#watch'
 
   authenticate :mentor do
     get '/mentors/index'
