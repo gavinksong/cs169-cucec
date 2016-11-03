@@ -39,6 +39,8 @@ module NavigationHelpers
       #doing this because there is no need for new chat
       # chat_path
       '/'
+    when /^the donation page$/
+      '/donate/new'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

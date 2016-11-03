@@ -6,7 +6,7 @@ Feature: Donation
 
 Scenario: Access donation page
   
-  Given I am on the landing page
+  Given I am on the homepage
   Then I should see "Donate"
   When I follow "Donate"
   Then I should be on the donation page
@@ -14,4 +14,4 @@ Scenario: Access donation page
 Scenario: See Paypal
 
   Given I am on the donation page
-  Then I should see "Pay with Paypal"
+  Then I should see "Pay with Paypal" button
