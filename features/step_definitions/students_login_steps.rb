@@ -1,4 +1,4 @@
-Given (/^I am logged in as a "(.*)"$/) do |user|
+Given /^I am logged in as a student$/ do
   step 'a student with email "email@gmail.com" and password "password" exists'
   visit '/students/sign_in'
   fill_in 'Email', :with => 'email@gmail.com'

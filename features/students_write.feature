@@ -5,7 +5,7 @@ Feature: Student Write Page
   I want to be able to write in English and upload my writing to the app
   
 Background:
-  Given I am logged in as a "student"
+  Given I am logged in as a student
   And I am on "the student Write page"
   
 Scenario: I can write text in the text box.

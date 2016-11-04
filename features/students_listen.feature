@@ -5,7 +5,7 @@ Feature: Student Listen Page
   I want to be able to listen to English audio
   
 Background:
-  Given I am logged in as a "student"
+  Given I am logged in as a student
   And I am on the student Listen page
   
 Scenario: I can listen to audio

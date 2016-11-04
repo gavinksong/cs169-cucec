@@ -6,7 +6,7 @@ Feature: Student Speak Page
   and hear how they are pronounced.
   
 Background:
-  Given I am logged in as a "student"
+  Given I am logged in as a student
   And I am on "the student Speak page"
   
 Scenario: I can listen to audio
