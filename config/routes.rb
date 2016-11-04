@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get 'speak' => 'students#speak'
     get 'read' => 'students#read'
     get 'write' => 'students#write'
+    post 'write' => 'students#createwriting'
     get 'chat' => 'students#chat'
     get 'watch' => 'students#watch'
   end
