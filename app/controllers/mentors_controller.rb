@@ -1,4 +1,3 @@
 class MentorsController < ApplicationController
-    def index
-    end
+  before_action :authenticate_mentor!
 end

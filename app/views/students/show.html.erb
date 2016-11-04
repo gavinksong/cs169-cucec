@@ -1,26 +1,10 @@
 <div id="wrapper">
-
-    <!-- Sidebar -->
-    <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-            <li class="sidebar-brand">
-                <a href="navigation.html.erb">
-                    Student Name <!--Insert student name here-->
-                </a>
-            </li>
-            <li>
-                <a href="#">Dashboard</a>
-            </li>
-            <li>
-                <a href="#">Points</a>
-            </li>
-            <li>
-                <a href="#">Logout</a>
-            </li>
-        </ul>
+    <!-- Student Sign In or Sign Out -->
+    <div>
+      <% if student_signed_in? %>
+        <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
+      <% end %>
     </div>
-    <!-- /#sidebar-wrapper -->
-
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">
@@ -39,7 +23,7 @@
                                     <p>
                                         Listen to English recordings.
                                     </p>
-                                    <a href= <%= listen_path %> class="btn btn-default">Listen</a>
+                                    <a href= <%= listen_students_path %> class="btn btn-default">Listen</a>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +35,7 @@
                                     <p>
                                         Improve your speaking skills.
                                     </p>
-                                    <a href=<%= speaking_students_path %> class="btn btn-default">Speak</a>
+                                    <a href=<%= speak_students_path %> class="btn btn-default">Speak</a>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +47,7 @@
                                     <p>
                                         Compare English and Chinese texts.
                                     </p>
-                                    <a href=<%= reading_students_path %>  class="btn btn-default">Read</a>
+                                    <a href=<%= read_students_path %>  class="btn btn-default">Read</a>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +59,7 @@
                                     <p>
                                         Practice your English writing skills.
                                     </p>
-                                    <a href=<%= writing_students_path %>  class="btn btn-default">Write</a>
+                                    <a href=<%= write_students_path %>  class="btn btn-default">Write</a>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +71,7 @@
                                     <p>
                                         Watch English movies and videos.
                                     </p>
-                                    <a href=<%= watching_students_path %> class="btn btn-default">Watch</a>
+                                    <a href=<%= watch_students_path %> class="btn btn-default">Watch</a>
                                 </div>
                             </div>
                         </div>
@@ -107,11 +91,6 @@
 
 
                     </div>
-                    <!-- End of Navigation tabs-->
-                    <br>
-
-                    <p><code>Go to navigation</code></p>
-                    <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle menu</a>
                 </div>
             </div>
         </div>
