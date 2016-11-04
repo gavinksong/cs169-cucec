@@ -3,8 +3,7 @@ class StudentsController < ApplicationController
   
   def createwriting
     writing_sample = params[:student_writing]["essay"]
-    Student.all
-    Writing.new(:student_id => current_user[:id], :writing_sample => writing_sample)
+    Writing.create(:student_id => current_user[:id], :sample => writing_sample)
     flash[:notice] = "upload successful"
     redirect_to students_path
   end
