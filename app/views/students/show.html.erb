@@ -5,6 +5,9 @@
       <% if student_signed_in? %>
         <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
       <% end %>
+      <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+      <% end %>
     </div>
     <!-- Page Content -->
     <div id="page-content-wrapper">
