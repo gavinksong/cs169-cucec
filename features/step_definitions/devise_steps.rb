@@ -3,5 +3,5 @@ Given (/^a student with email "(.*)" and password "(.*)" exists$/) do |email, pa
 end
 
 Given (/^a mentor with email "(.*)" and password "(.*)" exists$/) do |email, password|
-    Mentor.create!({:email => 'email@gmail.com', :password => password, :password_confirmation => password })
+    Mentor.create!({:email => email, :password => password, :password_confirmation => password })
 end
