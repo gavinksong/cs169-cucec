@@ -1,8 +1,8 @@
 Feature: Mentor login
 
-  Mentors should be able to sign into their account
-  This is essential because it allows mentors to
-  access
+  As a mentor
+  So that I can continue using the app
+  I want to be able to log in to my existing account
 
   Background:
     Given a mentor with email "email@gmail.com" and password "mypassword" exists
@@ -12,4 +12,4 @@ Feature: Mentor login
     And I fill in "mentor_email" with "email@gmail.com"
     And I fill in "mentor_password" with "mypassword"
     And I press "Log in"
-    Then I should be on the home page
+    Then I should be on the mentor dashboard page
