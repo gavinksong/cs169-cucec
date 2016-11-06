@@ -37,9 +37,6 @@ module NavigationHelpers
     when /^the student write page$/
       students_write_path
     when /^the student chat page$/
-      students_chat_path
-      
-    when /^the conversation page$/
       conversations_path
       #doing this because there is no need for new chat
       # chat_path
