@@ -4,9 +4,12 @@ Feature: Student Reading
   If I am on the Reading page for students
   I should see an article in English
   I should also see a translate article in Chinese
+  
+  Background:
+    Given I am logged in as a student
+    And I am on the student read page
 
   Scenario: Reading page articles
-    Given I am on the student Read page
     Then I should see "Article of the Day"
-    Then I should see "中文"
-    Then I should see "English"
+    And I should see "中文"
+    And I should see "English"
