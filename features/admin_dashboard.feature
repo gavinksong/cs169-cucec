@@ -1,12 +1,12 @@
-Feature: Admin Navigation Page
+Feature: Admin Dashboard
 
-  As an Admin
-  So that I may manage the content of the application
-  I want to be able upload the desired files into application
+  As a logged in admin
+  In order to access all the mentor-features of the app
+  I want to see buttons that lead to these features
+  These buttons include:
+  1. Upload
 
+  Background: On mentor dashboard page
+    Given I am logged in as an admin
 
-  Scenario: Upload the files to admin main page
-    Given I am on the admin page
-    Then I should see "Upload"
-    When I upload a file
-    Then I should see "upload successful"
+  Scenario: Accessing Upload

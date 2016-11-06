@@ -6,7 +6,7 @@ Feature: Student Listen Page
   
 Background:
   Given I am logged in as a student
-  And I am on the student Listen page
+  And I am on the student listen page
   
 Scenario: I can listen to audio
   Then I should see "Listen to Audio"

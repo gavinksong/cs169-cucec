@@ -10,4 +10,4 @@ Scenario: I am presented with the student sign up screen
   And I fill in "student_password" with "mypassword"
   And I fill in "student_password_confirmation" with "mypassword"
   And I press "Sign up"
-  Then I should be on the home page
+  Then I should be on the student dashboard page
