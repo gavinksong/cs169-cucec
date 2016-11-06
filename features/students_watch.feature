@@ -6,7 +6,7 @@ Feature: Student Watch Page
   
 Background:
   Given I am logged in as a student
-  And I am on the student video page
+  And I am on the student watch page
   
 Scenario: I can watch a video
   Then I should see "Watch Video"

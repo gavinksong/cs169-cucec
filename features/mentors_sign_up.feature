@@ -11,4 +11,4 @@ Feature: Mentor sign up
     And I fill in "mentor_password" with "mypassword"
     And I fill in "mentor_password_confirmation" with "mypassword"
     And I press "Sign up"
-    Then I should be on the homepage
+    Then I should be on the mentor dashboard page

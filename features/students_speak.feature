@@ -7,14 +7,14 @@ Feature: Student Speak Page
   
 Background:
   Given I am logged in as a student
-  And I am on "the student Speak page"
+  And I am on the student speak page
   
 Scenario: I can listen to audio
-  Given there is an "audio" file for "speaking"
-  When I press "audio"
-  Then I should hear audio playing
+  # Given there is an "audio" file for "speaking"
+  # When I press "audio"
+  # Then I should hear audio playing
   
 Scenario: I can see the pronunciation
-  Given there is a "text" file for "speaking"
-  Then I should see a text box
+  # Given there is a "text" file for "speaking"
+  # Then I should see a text box
   

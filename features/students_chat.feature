@@ -5,7 +5,7 @@ Feature: Student Chat
   English writing skills
 
   Scenario: Starting a new conversation
-    Given I am on the Chat page
+    Given I am on the student chat page
     And I follow "New Conversation"
     Then I should see "New Conversation"
 
