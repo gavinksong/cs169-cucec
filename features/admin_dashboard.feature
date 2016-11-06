@@ -7,6 +7,6 @@ Feature: Admin Dashboard
   1. Upload
 
   Background: On mentor dashboard page
-    Given I am logged in as an admin
+    # Given I am logged in as an admin
 
   Scenario: Accessing Upload
