@@ -1,23 +1,21 @@
-Feature: Mentor Navigation Page
+Feature: Mentor Dashboard
 
-    As a Mentor,
-    So that I can do some shit,
-    I want to be able to see the Mentor Navigation Page.
-    
-Background:
-    Given a mentor with email "email@email.com" and password "mypassword" exists
+  As a logged in mentor
+  In order to access all the mentor-features of the app
+  I want to see buttons that lead to these features
+  These buttons include:
+  1. Call
+  2. Chat
 
-Scenario: Redirect to Navigation Page upon login
-  
-    Given I am on the mentor login page
-    And I fill in "mentor_email" with "email@email.com"
-    And I fill in "mentor_password" with "mypassword"
-    And I press "Log in"
-    Then I should be on the mentor navigation page
+  Background: On mentor dashboard page
+    Given I am logged in as a mentor
 
-Scenario: Access Chat
-    
-    Given I am on the mentor navigation page
+  Scenario: Accessing Call
+    Then I should see "Call"
+    When I follow "Call"
+    Then I should be on the mentor call page
+
+  Scenario: Accessing Chat
     Then I should see "Chat"
-    When I press "chat-button"
-    Then I should be on the mentor Chat page.
+    When I follow "Chat"
+    Then I should be on the mentor chat page
