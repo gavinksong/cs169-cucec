@@ -7,6 +7,7 @@ addons:
 notifications:
   slack: tacos169:aK4mpa1pb7ksvkNO9lOoAAcC
 script:
+  - bundle exec rake db:schema:load
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
   - bundle exec rspec
