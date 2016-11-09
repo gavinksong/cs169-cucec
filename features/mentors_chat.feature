@@ -1,4 +1,4 @@
-Feature: Student Chat
+Feature: Mentor Chat
 
   Mentors should be able to chat with students
   This is important because it allows students to enhance their
