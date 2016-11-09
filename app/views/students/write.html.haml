@@ -1,5 +1,5 @@
 = render 'navigation/nav.html.erb'
 %h1 Writing
-= form_tag write_students_path, :id => "student_writing"  do
+= form_tag students_write_path, :id => "student_writing"  do
   = text_area(:student_writing, "essay", size: "100x4")
   = submit_tag 'upload'
