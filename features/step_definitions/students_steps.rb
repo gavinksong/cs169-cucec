@@ -10,3 +10,12 @@ Given /^I am logged in as a student$/ do
     step 'I should be on the student dashboard page'
   end
 end
+
+
+Given /^student "(.*)" with password "(.*)" is logged in$/ do |student, password|
+  visit new_student_session_path
+  fill_in 'Email', :with => student
+  fill_in 'Password', :with => password
+  click_button 'Log in'
+  step 'I should be on the student dashboard page'
+end

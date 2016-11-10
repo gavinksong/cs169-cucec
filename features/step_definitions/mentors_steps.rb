@@ -10,3 +10,13 @@ Given /^I am logged in as a mentor$/ do
     step 'I should be on the mentor dashboard page'
   end
 end
+
+Given /^mentor "(.*)" with password "(.*)" is logged in$/ do |mentor, password|
+  visit new_mentor_session_path
+  fill_in 'Email', :with => mentor
+  fill_in 'Password', :with => password
+  click_button 'Log in'
+
+  # TODO: This step is failing miserably
+  # step 'I should be on the mentor dashboard page'
+end

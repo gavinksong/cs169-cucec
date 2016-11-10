@@ -3,4 +3,7 @@ class Mentor < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  # realtime chat feature
+  has_many :conversations, dependent: :destroy
 end

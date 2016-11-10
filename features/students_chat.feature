@@ -9,4 +9,3 @@ Feature: Student Chat
     And I follow "New Conversation"
     Then I should see "New Conversation"
 
-  Scenario: Message to mentor should send
