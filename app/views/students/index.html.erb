@@ -1,10 +1,11 @@
-<%= render 'navigation/nav.html.erb' %>
-<div id="wrapper">
-    <!-- Student Sign In or Sign Out -->
-    <div>
-      <% if student_signed_in? %>
+<%= render layout: 'shared/navbar' do %>
+    <li>
         <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
-      <% end %>
+    </li>
+<% end %>
+<div id="wrapper">
+    <!-- Flash messages -->
+    <div>
       <% flash.each do |key, value| %>
       <%= content_tag :div, value, class: "flash #{key}" %>
       <% end %>
