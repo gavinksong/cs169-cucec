@@ -30,6 +30,10 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'haml'
 
+# Realtime chat gems
+gem 'redis', '~> 3.0'
+gem 'puma' # ActionCable needs a threaded server
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

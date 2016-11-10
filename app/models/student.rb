@@ -3,5 +3,12 @@ class Student < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :writings
+
+  # writing feature
+  has_many :writings, dependent: :destroy
+
+  # realtime chat feature
+  has_many :conversations, dependent: :destroy
+
+
 end

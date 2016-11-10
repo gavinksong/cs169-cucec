@@ -4,31 +4,34 @@ class ConversationsController < ApplicationController
   # GET /conversations
   # GET /conversations.json
   def index
-    @students = Student.all
-    @mentor = Mentor.all
     @conversations = Conversation.all
-
   end
 
   def new
     @conversation = Conversation.new
   end
 
-
-  def create
-    #TODO: clear this shit
-    @conversation = Conversation.new(conversation_params)
-
-    respond_to do |format|
-      if @conversation.save
-        format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
-        format.json { render :show, status: :created, location: @conversation }
-      else
-        format.html { render :new }
-        format.json { render json: @conversation.errors, status: :unprocessable_entity }
-      end
-    end
+  def show
+    @conversation = Conversation.find_by(slug: params[:slug])
+    @message = Message.new
   end
+
+  # @deprecated Function
+  #
+  # def create
+  #   #TODO: clear this shit
+  #   @conversation = Conversation.new(conversation_params)
+  #
+  #   respond_to do |format|
+  #     if @conversation.save
+  #       format.html { redirect_to @conversation, notice: 'Conversation was successfully created.' }
+  #       format.json { render :show, status: :created, location: @conversation }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @conversation.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
 
   private
