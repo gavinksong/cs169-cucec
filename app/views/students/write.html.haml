@@ -1,4 +1,8 @@
-= render 'navigation/nav.html.erb'
+= render layout: 'shared/navbar' do
+  %li
+    = link_to('Dashboard', students_path)
+  %li
+    = link_to('Logout', destroy_student_session_path, :method => :delete)
 %h1 Writing
 = form_tag students_write_path, :id => "student_writing"  do
   = text_area(:student_writing, "essay", size: "100x4")

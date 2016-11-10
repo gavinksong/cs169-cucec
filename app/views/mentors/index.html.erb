@@ -1,11 +1,15 @@
-<%= render 'navigation/nav.html.erb' %>
+<%= render layout: 'shared/navbar' do %>
+    <li>
+        <%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %>
+    </li>
+<% end %>
 <div id="wrapper">
-  <!-- Mentor Sign In or Sign Out -->
-  <div>
-    <% if mentor_signed_in? %>
-      <%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %>
-    <% end %>
-  </div>
+    <!-- Flash messages -->
+    <div>
+      <% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+      <% end %>
+    </div>
     <!-- Page Content -->
     <div id="page-content-wrapper">
         <div class="container-fluid">

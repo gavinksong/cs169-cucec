@@ -1,1 +1,8 @@
-<%= render 'navigation/nav.html.erb' %>
+<%= render layout: 'shared/navbar' do %>
+    <li>
+        <%= link_to('Dashboard', students_path) %>
+    </li>
+    <li>
+        <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
+    </li>
+<% end %>

@@ -1,4 +1,20 @@
-<%= render 'navigation/nav.html.erb' %>
+<%= render layout: 'shared/navbar' do %>
+    <li>
+        <a href="/students">Students</a>
+    </li>
+    <li>
+        <a href="/mentors">Mentors</a>
+    </li>
+    <li>
+        <a href="/donate/new">Donate</a>
+    </li>
+    <li>
+        <a>Contact</a>
+    </li>
+    <li>
+        <a>About</a>
+    </li>
+<% end %>
 <!-- Header -->
 <a name="about"></a>
 <div class="intro-header">
