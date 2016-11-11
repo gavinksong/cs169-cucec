@@ -14,21 +14,38 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/students">Students</a>
-                </li>
-                <li>
-                    <a href="/mentors">Mentors</a>
-                </li>
-                <li>
-                    <a href="/donate/new">Donate</a>
-                </li>
-                <li>
-                    <a>Contact</a>
-                </li>
-                <li>
-                    <a>About</a>
-                </li>
+                <% if admin_signed_in? or mentor_signed_in? or student_signed_in?%>
+                    <li><%= link_to('Logout', destroy_student_session_path, :method => :delete) %></li>
+                    <% if mentor_signed_in?%>
+                        <li>
+                            <a href="/mentors">Home</a>
+                        </li>
+                    <% end %> 
+                    <% if student_signed_in?%>
+                        <li>
+                            <a href="/students">Home</a>
+                        </li>
+                    <% end %> 
+                <% else %>
+                    <li>
+                        <a href="/students">Students</a>
+                    </li>
+                    <li>
+                        <a href="/mentors">Mentors</a>
+                    </li>
+                    <li>
+                        <a href="/admins">Admins</a>
+                    </li>
+                    <li>
+                        <a href="/donate/new">Donate</a>
+                    </li>
+                    <li>
+                        <a>Contact</a>
+                    </li>
+                    <li>
+                        <a>About</a>
+                    </li>
+                <% end %>    
             </ul>
         </div>
         <!-- /.navbar-collapse -->

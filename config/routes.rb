@@ -1,16 +1,18 @@
 Rails.application.routes.draw do
   
-  devise_for :admins
+
   root to: 'pages#index'
   
   devise_for :mentors
   devise_for :students
+  devise_for :admins
   
   resources :conversations do
     resources :messages
   end
   
   resources :donate
+  
   
   # students routes
   get 'students' => 'students#index'
@@ -21,8 +23,11 @@ Rails.application.routes.draw do
   get 'students/chat' => 'students#chat'
   get 'students/watch' => 'students#watch'
 
+
   # mentors routes
   get 'mentors' => 'mentors#index'
   get 'mentors/call' => 'mentors/chat'
   get 'mentors/chat' => 'mentors/call'
+  
+  get 'admins' => 'admins#index'
 end
