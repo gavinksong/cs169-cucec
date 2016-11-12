@@ -44,6 +44,8 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # If we want to use Javascript
   # gem 'jasmine-rails'
+  gem 'guard'
+  gem 'guard-cucumber'
 end
 
 group :development do
