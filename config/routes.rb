@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  devise_for :admins
   root to: 'pages#index'
   
   devise_for :mentors
@@ -24,4 +25,7 @@ Rails.application.routes.draw do
   get 'mentors' => 'mentors#index'
   get 'mentors/call' => 'mentors/chat'
   get 'mentors/chat' => 'mentors/call'
+  
+  # admins routes
+  get 'admins' => 'admins#index'
 end
