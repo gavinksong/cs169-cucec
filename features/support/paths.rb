@@ -5,6 +5,12 @@ module NavigationHelpers
     when /^the home\s?page$/, /^the landing page$/
       '/'
       
+    # admin paths
+    when /^the admin login page$/
+      new_admin_session_path 
+    when /^the admin dashboard page$/
+      admins_path
+      
     # mentor paths
     when /^the mentor dashboard page$/
       mentors_path
