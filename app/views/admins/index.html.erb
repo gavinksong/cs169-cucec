@@ -1,0 +1,6 @@
+<%= render layout: 'shared/navbar' do %>
+    <li>
+        <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+    </li>
+<% end %>
+<h1> Admin Hello</h1>

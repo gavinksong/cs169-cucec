@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
     if mentor_signed_in?
       return mentors_path
     end
+    if admin_signed_in?
+      return admins_path
+    end
     #admin redirect to come in here as well
   end
 end
