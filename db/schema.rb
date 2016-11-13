@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20161112182454) do
   create_table "writings", force: :cascade do |t|
     t.text    "sample"
     t.integer "student_id"
+    t.string  "date"
   end
 
 end

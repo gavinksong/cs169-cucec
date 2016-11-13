@@ -8,7 +8,7 @@ Background:
   Given an admin with email "email@gmail.com" and password "mypassword" exists
   
 Scenario: I am presented with the login screen
-  Given I am on the admin login page
+   Given I am on the admin login page
    And I fill in "admin_email" with "email@gmail.com"
    And I fill in "admin_password" with "mypassword"
    And I press "Log in"
