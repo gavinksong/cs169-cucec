@@ -66,6 +66,10 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    carrierwave (1.0.0.rc)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
+      mime-types (>= 1.16)
     chronic (0.10.2)
     churn (0.0.35)
       chronic (>= 0.2.3)
@@ -385,6 +389,7 @@ DEPENDENCIES
   autotest-rails
   bootstrap-sass (~> 3.3.7)
   byebug
+  carrierwave (>= 1.0.0.rc, < 2.0)
   codeclimate-test-reporter
   coffee-rails (~> 4.2)
   cucumber-rails

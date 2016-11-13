@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161112065534) do
+ActiveRecord::Schema.define(version: 20161112182454) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 20161112065534) do
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
-  
+
   create_table "chats", force: :cascade do |t|
-     t.datetime "created_at", null: false
-     t.datetime "updated_at", null: false
-     end
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "student_id"
@@ -71,6 +71,13 @@ ActiveRecord::Schema.define(version: 20161112065534) do
     t.index ["student_id"], name: "index_messages_on_student_id"
   end
 
+  create_table "resources", force: :cascade do |t|
+    t.string   "name"
+    t.string   "attachment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -92,7 +99,5 @@ ActiveRecord::Schema.define(version: 20161112065534) do
     t.text    "sample"
     t.integer "student_id"
   end
-
-
 
 end

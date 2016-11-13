@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+
+
   devise_for :admins
   root to: 'pages#index'
   
@@ -28,4 +29,15 @@ Rails.application.routes.draw do
   
   # admins routes
   get 'admins' => 'admins#index'
+  
+  #admin's text upload  
+  get 'admins/resources/index' => 'resources#index'
+  get 'admins/resources/new' => 'resources#new'
+  post 'admins/resources/create' => 'resources#create'
+  delete 'admins/resources/destroy' => 'resources#destroy'
+
+  # resources :admins do
+  #   resources :resources
+  # end
+
 end
