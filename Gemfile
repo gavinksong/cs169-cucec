@@ -44,8 +44,6 @@ group :development, :test do
   gem 'byebug', platform: :mri
   # If we want to use Javascript
   # gem 'jasmine-rails'
-  gem 'guard'
-  gem 'guard-cucumber'
 end
 
 group :development do
@@ -59,6 +57,9 @@ end
 
 group :test do
   gem 'rspec-rails', '2.14'
+  gem 'guard-rspec', require: false
+  gem 'guard'
+  gem 'guard-cucumber'
   gem 'simplecov', require: false
   gem 'cucumber-rails', require: false
   gem 'cucumber-rails-training-wheels'
