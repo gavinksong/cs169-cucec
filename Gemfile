@@ -33,6 +33,7 @@ gem 'haml'
 # Realtime chat gems
 gem 'redis', '~> 3.0'
 gem 'puma' # ActionCable needs a threaded server
+gem 'faye-rails'
 
 # Uploads gem
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
