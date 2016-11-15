@@ -1,6 +1,6 @@
 class MentorsController < ApplicationController
-  before_action :authenticate_mentor!
-
+  # before_action :authenticate_mentor!
+  
   private
     # def authenticate_mentor!
     #   # TODO: Sign in mentor if authentication succeeds
