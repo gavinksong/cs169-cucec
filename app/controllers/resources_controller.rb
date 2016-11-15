@@ -11,10 +11,10 @@ class ResourcesController < ApplicationController
     @resource = Resource.new(resource_params)
     
     if @resource.save
-       flash[:success] = "The resume #{@resource.name} has been uploaded."
+       flash[:notice] = "Upload successful"
        redirect_to admins_resources_index_path
     else
-       flash[:error] = "Make sure to name a file and upload it."
+       flash[:notice] = "Make sure to name a file and upload it."
        redirect_to admins_resources_new_path
     end
 
