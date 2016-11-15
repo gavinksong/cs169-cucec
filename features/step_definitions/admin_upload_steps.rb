@@ -1,3 +1,4 @@
+require 'pathname'
 path = ""
 Given(/^a "([^"]*)" file exists for "([^"]*)" for (today|tommorrow)$/) do |type, feature, day|
   if day == "today"
@@ -37,9 +38,11 @@ Given(/^it is tommorrow$/) do
 end
 
 Given(/^no content has been uploaded$/) do
-  Dir.foreach('public/uploads') do |item|
-    next if item == '.' or item == '..' or item == 'tmp'
-    FileUtils.rm('public/uploads/' + item)
+  if Pathname.new('public/uploads').directory?
+    Dir.foreach('public/uploads') do |item|
+      next if item == '.' or item == '..' or item == 'tmp'
+      FileUtils.rm('public/uploads/' + item)
+    end
   end
 end
 
