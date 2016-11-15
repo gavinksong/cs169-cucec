@@ -19,3 +19,9 @@ Given /^student "(.*)" with password "(.*)" is logged in$/ do |student, password
   click_button 'Log in'
   step 'I should be on the student dashboard page'
 end
+
+Then(/^I should see "([^"]*)" in "([^"]*)"$/) do |content, subarea|
+  within("#" + subarea) do
+    expect(page).to have_content content
+  end
+end
