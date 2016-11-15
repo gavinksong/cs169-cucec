@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     end
     #admin redirect to come in here as well
   end
+  
+  def current_user
+    @current_user ||= (warden.authenticate(scope: :student) || nil)
+  end
 end
