@@ -6,8 +6,10 @@ class MessagesController < ApplicationController
 
   def create
     message = Message.new(message_params)
+    message.create_conversation(id: message_params[:conversation_id])
+    message.create_student_or_mentor(id: current_user.id)
 
-    if message.save
+    if message.save!
       ActionCable.server.broadcast 'messages',
           message: message.content,
           user: current_user.email

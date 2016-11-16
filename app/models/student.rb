@@ -11,4 +11,7 @@ class Student < ApplicationRecord
   has_many :conversations, dependent: :destroy
   has_many :messages, as: :student_or_mentor
 
+  def type
+    :student
+  end
 end

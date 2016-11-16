@@ -1,10 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Student:</strong>
-
-</p>
-
 <div class="row col-md-8 col-md-offset-2">
 
   <div class="panel panel-default">
@@ -18,11 +13,7 @@
     <%end%>
   </div>
 
-  <%= render partial: 'messages/message_form', locals: { message: @message, conversation: @conversation}%>
+  <%= render partial: 'messages/message_form', locals: { message: @message, conversation: @conversation }%>
 </div>
-
-<p>
-  <strong>Mentor:</strong>
-</p>
 
 <%= link_to 'Back', conversations_path %>
