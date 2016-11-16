@@ -1,11 +1,3 @@
-<%= render layout: 'shared/navbar' do %>
-    <li>
-        <%= link_to('Dashboard', students_path) %>
-    </li>
-    <li>
-        <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
-    </li>
-<% end %>
 <section class="container">
   <h1>Watch Video</h1>
   <p><%= video_tag("video.mp4", autoplay: false, controls: true, autobuffer: true)%></p>
