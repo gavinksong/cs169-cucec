@@ -1,0 +1,40 @@
+<%= render layout: 'shared/navbar' do %>
+    <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
+    <li><%= link_to('Home', admins_path) %></li>
+<% end %>
+<div class = "container" style = "padding-top:20px;">
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+<%= link_to "New Resource", new_resource_path, class: "btn btn-primary", id: "new_resource" %>
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Download Link</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @resources.each do |resource| %>
+         
+         <tr>
+            <td><%= resource.name %></td>
+            <td><%= link_to "Download", resource.attachment_url %></td>
+            <td><%= button_to "Delete",  url: resource, method: :destroy, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.name}?" %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+</div>
