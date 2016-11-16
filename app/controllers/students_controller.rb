@@ -7,4 +7,9 @@ class StudentsController < ApplicationController
     flash[:notice] = "upload successful"
     redirect_to students_path
   end
+  
+  def read
+    @read_english = Resource.read_english
+    @read_chinese = Resource.read_chinese
+  end
 end

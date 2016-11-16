@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+
+
   devise_for :admins
   root to: 'pages#index'
   
@@ -27,5 +28,14 @@ Rails.application.routes.draw do
   get 'mentors/chat' => 'mentors/call'
   
   # admins routes
-  get 'admins' => 'admins#index'
+  resources :admins do
+    collection do
+      resources :resources
+    end
+  end
+
+  # resources :admins do
+  #   resources :resources
+  # end
+
 end

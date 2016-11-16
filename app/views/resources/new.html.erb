@@ -1,0 +1,19 @@
+<%= render layout: 'shared/navbar' do %>
+    <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
+    <li><%= link_to('Home', admins_path) %></li>
+<% end %>
+
+<div class = "container" style = "padding-top:20px;">
+<% flash.each do |key, value| %>
+      <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
+<div class="well">
+   <%= form_for @resource, url: resources_path, html: { multipart: true } do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.file_field :attachment %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+   <% end %>
+</div>
+</div>
