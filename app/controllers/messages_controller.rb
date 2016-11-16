@@ -6,9 +6,12 @@ class MessagesController < ApplicationController
 
   def create
     message = Message.new(message_params)
-    # message.student_or_mentor = current_user
+
     if message.save
-      # display in realtime
+      ActionCable.server.broadcast 'messages',
+          message: message.content,
+          user: current_user.email
+      head :ok
     else
       redirect_to conversations_path
     end
