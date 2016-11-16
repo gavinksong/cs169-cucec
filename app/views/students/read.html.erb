@@ -1,12 +1,18 @@
 <h1>Article of the Day</h1>
-<h2>English Version</h2>
-<pre>
-    <%= render :file => @read_english %>
-</pre>
-<h2>Chinese Version</h2>
-<pre>
-    <%= render :file => @read_chinese %>
-</pre>
-<p>中文</p>
-<p>English</p>
+<div class="container">
+    <div class="row greybackground"">
+        <div class="col-xs-6">
+            <h2>English Version</h2>
+            <tt>
+                <%= render :file => @read_english %>
+            </tt>
+        </div>
+        <div class="col-xs-6">
+            <h2>Chinese Version</h2>
+            <tt>
+                <%= render :file => @read_chinese %>
+            </tt>
+        </div>
+    </div>
+</div>
 
