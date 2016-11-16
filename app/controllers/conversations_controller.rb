@@ -14,12 +14,12 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    @conversation = Conversation.new
+    conversation = Conversation.new
 
     # create associations
-    @conversation.create_student(id: current_user.id)
-    @conversation.create_mentor(id: Mentor.first.id) # will replace with active mentor later
-    @conversation.save!
+    conversation.create_student(id: current_user.id)
+    conversation.create_mentor(id: Mentor.first.id) # will replace with active mentor later
+    conversation.save!
 
     # reloads the page
     redirect_to :back
