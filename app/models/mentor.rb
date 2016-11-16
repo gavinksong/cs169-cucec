@@ -6,4 +6,5 @@ class Mentor < ApplicationRecord
 
   # realtime chat feature
   has_many :conversations, dependent: :destroy
+
 end

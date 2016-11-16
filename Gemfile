@@ -59,7 +59,8 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '2.14'
+  gem 'rspec-rails'
+  gem 'test-unit'
   gem 'guard-rspec', require: false
   gem 'guard'
   gem 'guard-cucumber'
