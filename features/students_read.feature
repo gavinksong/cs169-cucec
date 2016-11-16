@@ -11,5 +11,3 @@ Feature: Student Reading
 
   Scenario: Reading page articles
     Then I should see "Article of the Day"
-    And I should see "中文"
-    And I should see "English"
