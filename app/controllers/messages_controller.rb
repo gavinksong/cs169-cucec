@@ -1,13 +1,9 @@
 class MessagesController < ApplicationController
 
-  def index
-    @messages = Message.all
-  end
-
   def create
     message = Message.new(message_params)
     message.create_conversation(id: message_params[:conversation_id])
-    message.create_author(id: current_user.id)
+    message.author = current_user
 
     # remove exclamation in production
     if message.save!
