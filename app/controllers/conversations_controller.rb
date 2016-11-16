@@ -6,6 +6,7 @@ class ConversationsController < ApplicationController
   end
 
   def new
+    @student = current_user
     @conversation = Conversation.new
   end
 
