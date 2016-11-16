@@ -34,6 +34,9 @@ gem 'haml'
 gem 'redis', '~> 3.0'
 gem 'puma' # ActionCable needs a threaded server
 
+# Uploads gem
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
