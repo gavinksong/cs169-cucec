@@ -26,11 +26,8 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find_by(slug: params[:slug])
+    @conversation = Conversation.find_by(id: params[:slug])
     @message = Message.new
-  end
-
-  def edit
   end
 
 end
