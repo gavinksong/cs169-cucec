@@ -48,6 +48,8 @@ module NavigationHelpers
       # chat_path
     when /^the donation page$/
       new_donate_path
+    when /^the [u|U]pload page$/
+      admins_resources_index_path
     else
       begin
         page_name =~ /^the (.*) page$/
