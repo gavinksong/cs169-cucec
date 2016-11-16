@@ -18,5 +18,4 @@ describe StudentsController, :type => :controller do
   end
 
 
-
 end
