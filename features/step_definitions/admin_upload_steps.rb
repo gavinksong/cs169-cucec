@@ -1,6 +1,6 @@
 require 'pathname'
 path = ""
-Given(/^a "([^"]*)" file exists for "([^"]*)" for (today|tommorrow)$/) do |type, feature, day|
+Given(/^a "([^"]*)" file exists for "([^"]*)" for (today|tomorrow)$/) do |type, feature, day|
   if day == "today"
     day = Date.today.to_s
   else
@@ -15,7 +15,7 @@ Given(/^it has content "([^"]*)"$/) do |content|
   end
 end
 
-When(/^I upload "([^"]*)" for "([^"]*)" for (today|tommorrow)$/) do |type, feature, day|
+When(/^I upload "([^"]*)" for "([^"]*)" for (today|tomorrow)$/) do |type, feature, day|
   click_link "new_resource"
   if day == "today"
     day = Date.today.to_s
@@ -28,7 +28,7 @@ When(/^I upload "([^"]*)" for "([^"]*)" for (today|tommorrow)$/) do |type, featu
   click_button 'Save'
 end
 
-Given(/^it is tommorrow$/) do
+Given(/^it is tomorrow$/) do
   class Date
     @tom = self.today + 1
     def self.today
@@ -54,6 +54,20 @@ Then (/^Delete all files$/) do
     end
   end
 end
+
+Given /^I successfully upload files for (.*)$/ do |day|
+  steps %{
+    Then I should see "Upload"
+    When I follow "Upload"
+    Then I should be on the Upload page
+    When I upload "txt" for "read_english" for #{day}
+    Then I should see "Upload successful"
+    Then I should be on the Upload page
+    When I upload "txt" for "read_chinese" for #{day}
+    Then I should see "Upload successful"
+  }
+end
+
 
 
 
