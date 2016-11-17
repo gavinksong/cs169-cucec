@@ -22,7 +22,7 @@ module NavigationHelpers
     when /^the mentor call page$/
       mentors_call_path  
     when /^the mentor chat page$/
-      mentors_chat_path 
+      conversations_path
       
     # student paths
     when /^the student dashboard page$/
