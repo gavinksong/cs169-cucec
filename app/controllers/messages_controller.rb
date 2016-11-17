@@ -5,8 +5,7 @@ class MessagesController < ApplicationController
     message.conversation = Conversation.find(message_params[:conversation_id])
     message.author = current_user
 
-    # remove exclamation in production
-    if message.save!
+    if message.save
       ActionCable.server.broadcast 'messages',
           message: message.content,
           user: current_user.email
