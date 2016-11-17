@@ -5,4 +5,6 @@ module SessionsHelper
   def current_user
     @current_user = current_mentor || current_student
   end
+
+
 end

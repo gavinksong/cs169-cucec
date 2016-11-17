@@ -1,4 +1,4 @@
 <li>
-  Conversation with <%= conversation.mentor.email %>
+  Conversation with <%= current_user.type == [:student] ? conversation.mentor.email : conversation.student.email %>
   <%= link_to 'Show', conversation_path(conversation) %>
 </li>

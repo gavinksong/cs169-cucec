@@ -1,7 +1,7 @@
 class ConversationsController < ApplicationController
 
   def index
-    if student_signed_in?
+    if current_user
       @conversations = current_user.conversations
     else
       flash[:info] = 'Please sign in'
