@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Conversations</h1>
+<div class="panel panel-default">
+  <% if @conversations.any? %>
+      <div class="panel-body" id="conversations">
+        <%= render partial: 'conversations/conversation', collection: @conversations %>
+      </div>
+  <%else%>
+      <div class="panel-body hidden" id="conversations"></div>
+  <%end%>
+</div>
 
-<!--TODO: Chat logic -->
-<%= link_to 'New Conversation', new_conversation_path %>
+<!-- Creates conversation with random, active mentor -->
+<p><%= link_to "New Conversation", conversations_path, :method => :post %></p>
+

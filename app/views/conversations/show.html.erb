@@ -1,14 +1,19 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Student:</strong>
-  <%= @conversation.student_id %>
-</p>
+<div class="row col-md-8 col-md-offset-2">
 
-<p>
-  <strong>Mentor:</strong>
-  <%= @conversation.mentor_id %>
-</p>
+  <div class="panel panel-default">
+    <% if @conversation.messages.any? %>
+        <div class="panel-body" id="messages">
+          <%= render partial: 'messages/message', collection: @messages %>
+        </div>
+    <%else%>
+        <div class="panel-body hidden" id="messages">
+        </div>
+    <%end%>
+  </div>
 
-<%= link_to 'Edit', edit_conversation_path(@conversation) %> |
+  <%= render partial: 'messages/message_form', locals: { message: @message, conversation: @conversation }%>
+</div>
+
 <%= link_to 'Back', conversations_path %>

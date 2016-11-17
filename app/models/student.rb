@@ -9,6 +9,9 @@ class Student < ApplicationRecord
 
   # realtime chat feature
   has_many :conversations, dependent: :destroy
+  has_many :messages, as: :author
 
-
+  def type
+    :student
+  end
 end
