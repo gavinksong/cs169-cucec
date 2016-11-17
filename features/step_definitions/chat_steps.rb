@@ -5,3 +5,7 @@ Given /^there exists a conversation between student "(.*)" and mentor "(.*)"$/ d
 
 
 end
+
+Given /^there exists a mentor$/ do
+  step 'a mentor with email "emilio_aurea@berkeley.edu" and password "foobar" exists'
+end

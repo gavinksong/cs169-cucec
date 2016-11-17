@@ -2,7 +2,7 @@ class MessagesController < ApplicationController
 
   def create
     message = Message.new(message_params)
-    message.create_conversation(id: message_params[:conversation_id])
+    message.conversation = Conversation.find(message_params[:conversation_id])
     message.author = current_user
 
     # remove exclamation in production
