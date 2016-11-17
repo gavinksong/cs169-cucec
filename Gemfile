@@ -73,6 +73,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'metric_fu'
   gem "codeclimate-test-reporter", require: nil
+  gem 'rails-controller-testing'
 end
 
 group :production do

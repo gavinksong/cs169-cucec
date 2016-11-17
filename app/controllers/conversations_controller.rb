@@ -1,7 +1,6 @@
 class ConversationsController < ApplicationController
 
   def index
-    # TODO: Find all conversations created by user
     if student_signed_in?
       @conversations = current_user.conversations
     else
@@ -15,10 +14,9 @@ class ConversationsController < ApplicationController
 
   def create
     conversation = Conversation.new
-
-    # create associations
     conversation.create_student(id: current_user.id)
-    conversation.create_mentor(id: Mentor.first.id) # will replace with active mentor later
+    # TODO: Match to random, active mentor instead of first mentor
+    conversation.create_mentor(id: Mentor.first.id)
     conversation.save!
 
     # reloads the page
