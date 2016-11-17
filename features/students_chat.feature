@@ -5,7 +5,7 @@ Feature: Student Chat
   English writing skills
 
   Scenario: Starting a new conversation
+    Given I am logged in as a student
     Given I am on the student chat page
-    And I follow "New Conversation"
     Then I should see "New Conversation"
 
