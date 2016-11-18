@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :messages
 
 
+  devise_for :students
   devise_for :mentors
   devise_for :admins
   root to: 'pages#index'
