@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118224841) do
+ActiveRecord::Schema.define(version: 20161118230820) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -99,7 +99,6 @@ ActiveRecord::Schema.define(version: 20161118224841) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -111,6 +110,4 @@ ActiveRecord::Schema.define(version: 20161118224841) do
     t.string  "date"
   end
 
-=======
->>>>>>> recreated chats and conversations migrations and models
 end
