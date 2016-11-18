@@ -8,10 +8,8 @@ Rails.application.routes.draw do
   devise_for :students
   devise_for :mentors
   devise_for :admins
-  root to: 'pages#index'
   
-  # devise_for :mentors
-  # devise_for :students
+  root to: 'pages#index'
   
   # resources :conversations do
   #   resources :messages
