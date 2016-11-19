@@ -52,7 +52,8 @@ describe "Sign up", :type => :feature do
       '@domain.com',
       'Joe Smith <email@domain.com>',
       'email.domain.com',
-      'email@domain@domain.com',
+      'email@domain@domain.com'
+      # need to figure out how to add more email vaildations winthin devise to handle the following emails
       # '.email@domain.com'
       # 'email.@domain.com'
       # 'email..email@domain.com'
