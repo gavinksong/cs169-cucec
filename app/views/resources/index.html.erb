@@ -16,7 +16,7 @@
 <br />
 
 <table class = "table table-bordered table-striped">
-   <thead>.
+   <thead>
       <tr>
          <th>Name</th>
          <th>Download Link</th>
@@ -30,7 +30,7 @@
          <tr>
             <td><%= resource.name %></td>
             <td><%= link_to "Download", resource.attachment_url %></td>
-            <td><%= button_to "Delete",  url: resource, method: :destroy, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.name}?" %></td>
+            <td><%= link_to "Delete", resource_path(resource), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.name}?" %></td>
          </tr>
          
       <% end %>
