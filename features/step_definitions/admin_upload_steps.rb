@@ -57,7 +57,7 @@ end
 
 Given /^I successfully upload files for (.*)$/ do |day|
   steps %{
-    Then I should see "Upload"
+    Then I should be on the admin dashboard page
     When I follow "Upload"
     Then I should be on the Upload page
     When I upload "txt" for "read_english" for #{day}
