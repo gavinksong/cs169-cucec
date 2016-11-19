@@ -15,6 +15,9 @@ class StudentsController < ApplicationController
     @read_chinese = Resource.read_chinese
   end
   
+  def listen
+    @listen = Resource.listen
+  end
   def watch
     @resource = Resource.retrieve_video
   end

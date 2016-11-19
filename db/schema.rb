@@ -66,10 +66,6 @@ ActiveRecord::Schema.define(version: 20161125230255) do
     t.boolean  "read"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.text     "content"
-    t.string   "author_type"
-    t.integer  "author_id"
-    t.index ["author_type", "author_id"], name: "index_messages_on_author_type_and_author_id"
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["mentor_id"], name: "index_messages_on_mentor_id"
     t.index ["student_id"], name: "index_messages_on_student_id"
@@ -100,15 +96,9 @@ ActiveRecord::Schema.define(version: 20161125230255) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "writings", force: :cascade do |t|
     t.text    "sample"
     t.integer "student_id"
-    t.string  "date"
   end
 
 end
