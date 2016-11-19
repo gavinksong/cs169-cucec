@@ -11,6 +11,10 @@ module NavigationHelpers
     when /^the admin dashboard page$/
       admins_path
       
+    # resources path
+    when /^the [u|U]pload page$/
+      resources_path
+      
     # mentor paths
     when /^the mentor dashboard page$/
       mentors_path
@@ -48,8 +52,6 @@ module NavigationHelpers
       # chat_path
     when /^the donation page$/
       new_donate_path
-    when /^the [u|U]pload page$/
-      resources_path
     else
       begin
         page_name =~ /^the (.*) page$/
