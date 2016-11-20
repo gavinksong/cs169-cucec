@@ -15,9 +15,22 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 
+                <% if !student_signed_in? and !mentor_signed_in? %>
+                    <li>
+                        <a href="/students/sign_in">Students</a>
+                    </li>
+                    <li>
+                        <a href="/mentors/sign_in">Mentors</a>
+                    </li>
+                <% end %>
+                
                 <% if student_signed_in? %>
                      <li>
                         <%= link_to('Dashboard', students_path) %>
+                    </li>
+                <% elsif mentor_signed_in? %>
+                     <li>
+                        <%= link_to('Dashboard', mentors_path) %>
                     </li>
                 <% end %>
                 
@@ -35,28 +48,14 @@
                     <li>
                         <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
                     </li>
-                <% end %>
-                
-                <% if admin_signed_in? %>
-                <% end %>
-                
-                <% unless student_signed_in? %>
+                <% elsif mentor_signed_in? %>
                     <li>
-                        <a href="/students/sign_in">Students</a>
-                    </li>
-                    <li>
-                        <a href="/mentors/sign_in">Mentors</a>
+                        <%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %>
                     </li>
                 <% end %>
- 
- 
                 
-
-                
-                
-                
-
-                
+                <!--<% if admin_signed_in? %>-->
+                <!--<% end %>-->
                 
             </ul>
         </div>
