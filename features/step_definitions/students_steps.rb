@@ -11,6 +11,15 @@ Given /^I am logged in as a student$/ do
   end
 end
 
+Given /^I am logged out as a student$/ do
+  page.driver.submit :delete, destroy_student_session_path, {}
+  if page.respond_to? :should
+    step 'I should be on the landing page'
+  else
+    step 'I should be on the landing page'
+  end
+end
+
 
 Given /^student "(.*)" with password "(.*)" is logged in$/ do |student, password|
   visit new_student_session_path
