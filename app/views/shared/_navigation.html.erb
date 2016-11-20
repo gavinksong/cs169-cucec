@@ -1,0 +1,66 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+    <div class="container topnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand topnav" href="#">CUCEC</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                <% if student_signed_in? %>
+                     <li>
+                        <%= link_to('Dashboard', students_path) %>
+                    </li>
+                <% end %>
+                
+                <li>
+                    <a>About</a>
+                </li>
+                <li>
+                    <a href="/donate/new">Donate</a>
+                </li>
+                <li>
+                    <a>Contact</a>
+                </li>
+                
+                <% if student_signed_in? %>
+                    <li>
+                        <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
+                    </li>
+                <% end %>
+                
+                <% if admin_signed_in? %>
+                <% end %>
+                
+                <% unless student_signed_in? %>
+                    <li>
+                        <a href="/students/sign_in">Students</a>
+                    </li>
+                    <li>
+                        <a href="/mentors/sign_in">Mentors</a>
+                    </li>
+                <% end %>
+ 
+ 
+                
+
+                
+                
+                
+
+                
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
