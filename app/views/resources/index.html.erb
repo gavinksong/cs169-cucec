@@ -1,7 +1,5 @@
-<%= render layout: 'shared/navbar' do %>
-    <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
-    <li><%= link_to('Home', admins_path) %></li>
-<% end %>
+<%= render :partial => 'shared/navigation'%>
+
 <div class = "container" style = "padding-top:20px;">
 <% if !flash[:notice].blank? %>
    <div class = "alert alert-info">
