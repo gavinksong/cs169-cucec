@@ -16,6 +16,5 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.0]
     end
   add_index :admins, :email,                            unique: true
   add_index :admins, :reset_password_token,             unique: true           
-  t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 end
