@@ -1,3 +1,4 @@
+require 'spec_helper'
 describe "Sign up", :type => :feature do
   context "valid email" do
     valid_emails = [
@@ -45,7 +46,6 @@ describe "Sign up", :type => :feature do
   
   context "invalid emails" do
     invalid_emails = [
-      '',
       'Invalid Email',
       'plainaddress',	
       '#@%^%#$@#$@#.com',
@@ -65,7 +65,11 @@ describe "Sign up", :type => :feature do
       # 'email@111.222.333.44444',
       # 'email@domain..com'
     ]
-    
+
+
+
+
+
     invalid_emails.each do |email|
       it "Students" do
         visit new_student_registration_path
@@ -75,6 +79,7 @@ describe "Sign up", :type => :feature do
           fill_in 'Password confirmation', :with => 'password'
         end
         click_button 'Sign up'
+        puts email
         expect(page).to have_content 'error prohibited this student from being saved'
       end
     end
