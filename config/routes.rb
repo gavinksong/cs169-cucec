@@ -5,17 +5,17 @@ Rails.application.routes.draw do
   resources :messages
 
 
-  devise_for :admins
-  root to: 'pages#index'
-  
-  devise_for :mentors
   devise_for :students
+  devise_for :mentors
+  devise_for :admins
+  
+  root to: 'pages#index'
   
   # resources :conversations do
   #   resources :messages
   # end
   
-  resources :donate
+  # resources :donate
   
   # students routes
   get 'students' => 'students#index'
