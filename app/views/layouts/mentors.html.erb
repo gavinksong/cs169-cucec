@@ -11,23 +11,7 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= render layout: 'shared/navbar' do %>
-        <li>
-            <%= link_to('Dashboard', students_path) %>
-        </li>
-        <li>
-            <a href="/donate/new">Donate</a>
-        </li>
-        <li>
-            <a>Contact</a>
-        </li>
-        <li>
-            <a>About</a>
-        </li>
-        <li>
-            <%= link_to('Logout', destroy_mentor_session_path, :method => :delete) %>
-        </li>
-    <% end %>
+    <%= render :partial => 'shared/navigation'%>
     <%= yield %>
   </body>
 </html>

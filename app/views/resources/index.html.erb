@@ -1,7 +1,5 @@
-<%= render layout: 'shared/navbar' do %>
-    <li><%= link_to('Logout', destroy_admin_session_path, :method => :delete) %></li>
-    <li><%= link_to('Home', admins_path) %></li>
-<% end %>
+<%= render :partial => 'shared/navigation'%>
+
 <div class = "container" style = "padding-top:20px;">
 <% if !flash[:notice].blank? %>
    <div class = "alert alert-info">
@@ -16,7 +14,7 @@
 <br />
 
 <table class = "table table-bordered table-striped">
-   <thead>.
+   <thead>
       <tr>
          <th>Name</th>
          <th>Download Link</th>
@@ -30,7 +28,7 @@
          <tr>
             <td><%= resource.name %></td>
             <td><%= link_to "Download", resource.attachment_url %></td>
-            <td><%= button_to "Delete",  url: resource, method: :destroy, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.name}?" %></td>
+            <td><%= link_to "Delete", resource_path(resource), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.name}?" %></td>
          </tr>
          
       <% end %>

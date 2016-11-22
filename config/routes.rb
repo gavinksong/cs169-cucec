@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  mount ActionCable.server => '/cable'
+  resources :conversations, param: :slug
+  resources :messages
+
 
   devise_for :admins
   root to: 'pages#index'
@@ -7,9 +11,9 @@ Rails.application.routes.draw do
   devise_for :mentors
   devise_for :students
   
-  resources :conversations do
-    resources :messages
-  end
+  # resources :conversations do
+  #   resources :messages
+  # end
   
   resources :donate
   

@@ -11,6 +11,15 @@ Given /^I am logged in as a mentor$/ do
   end
 end
 
+Given /^I am logged out as a mentor$/ do
+  page.driver.submit :delete, destroy_mentor_session_path, {}
+  if page.respond_to? :should
+    step 'I should be on the landing page'
+  else
+    step 'I should be on the landing page'
+  end
+end
+
 Given /^mentor "(.*)" with password "(.*)" is logged in$/ do |mentor, password|
   visit new_mentor_session_path
   fill_in 'Email', :with => mentor

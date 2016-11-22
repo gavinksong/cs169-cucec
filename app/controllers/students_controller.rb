@@ -1,6 +1,8 @@
 class StudentsController < ApplicationController
   before_action :authenticate_student!
-  
+
+
+  # TODO: A Rubyist would refactor this method's name to create_writing
   def createwriting
     writing_sample = params[:student_writing]["essay"]
     Writing.create(:student_id => current_user[:id], :sample => writing_sample)
