@@ -66,9 +66,32 @@ describe "Sign up", :type => :feature do
       # 'email@domain..com'
     ]
 
+    #empty is a special case that throws 2 errors
+    context "empty student email" do
+      it "Students" do
+        visit new_student_registration_path
+        within("#new_student") do
+          fill_in 'Email', :with => " "
+          fill_in 'Password', :with => 'password'
+          fill_in 'Password confirmation', :with => 'password'
+        end
+        click_button 'Sign up'
+        expect(page).to have_content '2 errors prohibited this student from being saved'
+      end
+    end
 
-
-
+    context "empty mentor email" do
+      it "Mentors" do
+        visit new_mentor_registration_path
+        within("#new_mentor") do
+          fill_in 'Email', :with => " "
+          fill_in 'Password', :with => 'password'
+          fill_in 'Password confirmation', :with => 'password'
+        end
+        click_button 'Sign up'
+        expect(page).to have_content '2 errors prohibited this mentor from being saved'
+      end
+    end
 
     invalid_emails.each do |email|
       it "Students" do
