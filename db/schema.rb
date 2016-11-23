@@ -59,10 +59,6 @@ ActiveRecord::Schema.define(version: 20161123200647) do
     t.index ["reset_password_token"], name: "index_mentors_on_reset_password_token", unique: true
   end
 
-  create_table "mentors_available_tables", force: :cascade do |t|
-    t.string "email"
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text     "body"
     t.integer  "conversation_id"
