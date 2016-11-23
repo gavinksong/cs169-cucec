@@ -95,4 +95,15 @@ ActiveRecord::Schema.define(version: 20161112182454) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "writings", force: :cascade do |t|
+    t.text    "sample"
+    t.integer "student_id"
+    t.string  "date"
+  end
+
 end

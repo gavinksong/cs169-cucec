@@ -6,7 +6,7 @@ Given(/^a "([^"]*)" file exists for "([^"]*)" for (today|tomorrow)$/) do |type, 
   else
     day = (Date.today + 1).to_s
   end
-  path = "public/#{day}_" + feature + "." + type 
+  path = "public/#{day}_" + feature + "." + type
 end
 
 Given(/^it has content "([^"]*)"$/) do |content|
@@ -22,7 +22,7 @@ When(/^I upload "([^"]*)" for "([^"]*)" for (today|tomorrow)$/) do |type, featur
   else
     day = (Date.today + 1).to_s
   end
-  path = "public/#{day}_" + feature + "." + type 
+  path = "public/#{day}_" + feature + "." + type
   page.attach_file("resource_attachment", path)
   fill_in('resource_name', with: path)
   click_button 'Save'
@@ -67,7 +67,3 @@ Given /^I successfully upload files for (.*)$/ do |day|
     Then I should see "Upload successful"
   }
 end
-
-
-
-
