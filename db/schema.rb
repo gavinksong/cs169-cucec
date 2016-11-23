@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116064625) do
+ActiveRecord::Schema.define(version: 20161112182454) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -66,10 +66,6 @@ ActiveRecord::Schema.define(version: 20161116064625) do
     t.boolean  "read"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.text     "content"
-    t.string   "author_type"
-    t.integer  "author_id"
-    t.index ["author_type", "author_id"], name: "index_messages_on_author_type_and_author_id"
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["mentor_id"], name: "index_messages_on_mentor_id"
     t.index ["student_id"], name: "index_messages_on_student_id"
