@@ -1,3 +1,4 @@
+
 Given /^I am logged in as an admin$/ do
   step 'an admin with email "email@gmail.com" and password "mypassword" exists'
   visit admins_path
@@ -8,6 +9,7 @@ Given /^I am logged in as an admin$/ do
     step 'I should be on the admin dashboard page'
   end
 end
+
 
 Given /^I am logged out as an admin$/ do
   page.driver.submit :delete, destroy_admin_session_path, {}
