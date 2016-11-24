@@ -1,4 +1,11 @@
 require 'spec_helper'
+
+def create_accounts(email, password)
+  fill_in 'Email', :with => email
+  fill_in 'Password', :with => password
+  fill_in 'Password confirmation', :with => password
+end
+
 describe "Sign up", :type => :feature do
   context "valid email" do
     valid_emails = [
@@ -21,9 +28,7 @@ describe "Sign up", :type => :feature do
       it "Students" do
         visit new_student_registration_path
         within("#new_student") do
-          fill_in 'Email', :with => email
-          fill_in 'Password', :with => 'password'
-          fill_in 'Password confirmation', :with => 'password'
+          create_accounts(email, "password")
         end
         click_button 'Sign up'
         expect(page).to have_content 'Welcome! You have signed up successfully'
@@ -34,9 +39,7 @@ describe "Sign up", :type => :feature do
       it "Mentors" do
         visit new_mentor_registration_path
         within("#new_mentor") do
-          fill_in 'Email', :with => email
-          fill_in 'Password', :with => 'password'
-          fill_in 'Password confirmation', :with => 'password'
+         create_accounts(email, "password")
         end
         click_button 'Sign up'
         expect(page).to have_content 'Welcome! You have signed up successfully'
@@ -71,9 +74,7 @@ describe "Sign up", :type => :feature do
       it "Students" do
         visit new_student_registration_path
         within("#new_student") do
-          fill_in 'Email', :with => " "
-          fill_in 'Password', :with => 'password'
-          fill_in 'Password confirmation', :with => 'password'
+          create_accounts("", "password")
         end
         click_button 'Sign up'
         expect(page).to have_content '2 errors prohibited this student from being saved'
@@ -81,9 +82,7 @@ describe "Sign up", :type => :feature do
       it "Mentors" do
         visit new_mentor_registration_path
         within("#new_mentor") do
-          fill_in 'Email', :with => " "
-          fill_in 'Password', :with => 'password'
-          fill_in 'Password confirmation', :with => 'password'
+          create_accounts("", "password")
         end
         click_button 'Sign up'
         expect(page).to have_content '2 errors prohibited this mentor from being saved'
@@ -94,9 +93,7 @@ describe "Sign up", :type => :feature do
       it "Students" do
         visit new_student_registration_path
         within("#new_student") do
-          fill_in 'Email', :with => email
-          fill_in 'Password', :with => 'password'
-          fill_in 'Password confirmation', :with => 'password'
+          create_accounts(email, "password")
         end
         click_button 'Sign up'
         puts email
@@ -108,9 +105,7 @@ describe "Sign up", :type => :feature do
       it "Mentors" do
         visit new_mentor_registration_path
         within("#new_mentor") do
-          fill_in 'Email', :with => email
-          fill_in 'Password', :with => 'password'
-          fill_in 'Password confirmation', :with => 'password'
+          create_accounts(email, "password")
         end
         click_button 'Sign up'
         expect(page).to have_content 'error prohibited this mentor from being saved'
