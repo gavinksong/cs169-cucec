@@ -67,7 +67,7 @@ describe "Sign up", :type => :feature do
     ]
 
     #empty is a special case that throws 2 errors
-    context "empty student email" do
+    context "empty email" do
       it "Students" do
         visit new_student_registration_path
         within("#new_student") do
@@ -78,9 +78,6 @@ describe "Sign up", :type => :feature do
         click_button 'Sign up'
         expect(page).to have_content '2 errors prohibited this student from being saved'
       end
-    end
-
-    context "empty mentor email" do
       it "Mentors" do
         visit new_mentor_registration_path
         within("#new_mentor") do
