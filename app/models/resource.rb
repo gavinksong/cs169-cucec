@@ -14,13 +14,13 @@ class Resource < ApplicationRecord
     
     def self.read_english
         # YYYY-MM-DD_feature_extra
-        file = "public/uploads/#{Date.today.to_s}_read_english.txt"
+        file = "#{Rails.public_path}/uploads/#{Date.today.to_s}_read_english.txt"
         return Pathname.new(file).exist? ? file : "public/empty.txt"
     end
     
     def self.read_chinese
         # YYYY-MM-DD_feature_extra
-        file = "public/uploads/#{Date.today.to_s}_read_chinese.txt"
+        file = "#{Rails.public_path}/uploads/#{Date.today.to_s}_read_chinese.txt"
         return Pathname.new(file).exist? ? file : "public/empty.txt"
     end
     
