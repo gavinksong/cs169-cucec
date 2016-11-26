@@ -4,13 +4,21 @@
 <% flash.each do |key, value| %>
       <%= content_tag :div, value, class: "flash #{key}" %>
 <% end %>
-
+<h4>Uploads</h4>
 <div class="well">
+  <h4>Text files</h4>
    <%= form_for @resource, url: resources_path, html: { multipart: true } do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
       <%= f.file_field :attachment %>
-      <%= f.submit "Save", class: "btn btn-primary" %>
+      <%= f.submit "Save Text", class: "btn btn-primary" %>
+   <% end %>
+</div>
+<div class="well">
+  <h4>Video files</h4>
+   <%= form_for @resource, url: resources_path, html: { multipart: true } do |f| %>
+      <%= f.file_field :video %>
+      <%= f.submit "Save Video", class: "btn btn-primary" %>
    <% end %>
 </div>
 </div>
