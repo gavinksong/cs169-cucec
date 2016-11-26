@@ -21,4 +21,12 @@
       <%= f.submit "Save Video", class: "btn btn-primary" %>
    <% end %>
 </div>
+
+<div class="well">
+  <h4>Audio files</h4>
+   <%= form_for @resource, url: resources_path, html: { multipart: true } do |f| %>
+      <%= f.file_field :audio %>
+      <%= f.submit "Save Audio", class: "btn btn-primary" %>
+   <% end %>
+</div>
 </div>
