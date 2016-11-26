@@ -29,11 +29,6 @@ ActiveRecord::Schema.define(version: 20161125230255) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
-  create_table "chats", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "conversations", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "mentor_id"
@@ -80,7 +75,6 @@ ActiveRecord::Schema.define(version: 20161125230255) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "video"
   end
 
   create_table "students", force: :cascade do |t|
@@ -100,15 +94,9 @@ ActiveRecord::Schema.define(version: 20161125230255) do
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "writings", force: :cascade do |t|
     t.text    "sample"
     t.integer "student_id"
-    t.string  "date"
   end
 
 end
