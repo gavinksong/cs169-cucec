@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-students = Student.create([ {email: "baoskee@gmail.com", password: "foobar"}])
-mentors = Mentor.create([email: "emilioaurea@gmail.com", password: "foobar"])
+# students = Student.create([ {email: "baoskee@gmail.com", password: "foobar"}])
+# mentors = Mentor.create([email: "emilioaurea@gmail.com", password: "foobar"])
 
+# only one admin
+Admin.create!( {
+  :email => "honglin8@gmail.com",
+  :password => "cucec2016alpha",
+  :password_confirmation => "cucec2016alpha"
+})

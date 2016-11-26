@@ -8,6 +8,8 @@ module NavigationHelpers
     # admin paths
     when /^the admin login page$/
       new_admin_session_path 
+    when /^the admin signup page$/
+      'admins/sign_up'  
     when /^the admin dashboard page$/
       admins_path
       
