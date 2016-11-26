@@ -7,11 +7,10 @@ class AttachmentUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "audios/"
-
   end
   
   def extension_white_list
-    %w(pdf doc htm html docx)
+    %w(pdf doc htm html docx mp3)
   end
 
 end

@@ -18,6 +18,7 @@ class StudentsController < ApplicationController
   def listen
     @listen = Resource.listen
   end
+  
   def watch
     @resource = Resource.retrieve_video
   end

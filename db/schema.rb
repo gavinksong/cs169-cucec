@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20161125230255) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "video"
   end
 
   create_table "students", force: :cascade do |t|

@@ -24,7 +24,13 @@ class Resource < ApplicationRecord
         return Pathname.new(file).exist? ? file : "public/empty.txt"
     end
     
-<<<<<<< 968ba3dcafcbee143186691ee31b58c493e5fbfe
+    def self.listen
+        
+        file_path = "public/audios/#{Date.today.to_s}_listen.mp3"
+        file_name = "#{Date.today.to_s}_listen.mp3"
+        return Pathname.new(file_path).exist? ? file_name : "#"
+    end
+    
     def self.retrieve_video
       resource = Resource.order("created_at").last #finds newest resource
       return resource
@@ -34,11 +40,4 @@ class Resource < ApplicationRecord
     #   resource = Resource.order("created_at").last #finds newest resource
     #   return resource
     # end
-=======
-    def self.listen
-        file = "2016-11-18_listen.mp3"
-        file_path="public/audios/2016-11-18_listen.mp3"
-        return Pathname.new(file_path).exist? ? file : "null"
-    end
->>>>>>> audios/ vs uploads
 end
