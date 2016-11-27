@@ -1,8 +1,4 @@
 <section class="container">
   <h1>Watch Video</h1>
-  <% if @resource and @resource.video%>
-    <%= video_tag @resource.video.url, :controls => true%>
-  <% else %>
-    <p> No Video Uploaded </p>
-  <% end %>
-</section>
+  <p><%= video_tag(src = @watch, autoplay: false, controls: true)%></p>
+</section
