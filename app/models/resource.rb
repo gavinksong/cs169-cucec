@@ -28,9 +28,4 @@ class Resource < ApplicationRecord
       resource = Resource.order("created_at").last #finds newest resource
       return resource
     end
-    # ultimately this template is a better fit for the app
-    # def self.retrieve_resource
-    #   resource = Resource.order("created_at").last #finds newest resource
-    #   return resource
-    # end
 end
