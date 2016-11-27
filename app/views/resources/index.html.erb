@@ -17,17 +17,16 @@
    <thead>
       <tr>
          <th>Name</th>
-         <th>Download Link</th>
-         <th> </th>
+         <th>Download</th>
+         <th>Delete</th>
       </tr>
    </thead>
    
    <tbody>
       <% @resources.each do |resource| %>
-         
          <tr>
             <td><%= resource.name %></td>
-            <td><%= link_to "Download", resource.attachment_url %></td>
+            <td><%= link_to "Download", ""%></td>
             <td><%= link_to "Delete", resource_path(resource), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.name}?" %></td>
          </tr>
          

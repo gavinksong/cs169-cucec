@@ -10,7 +10,7 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     
-    @resource.save! #force save to allow tests to pass. this should be modified to cater for save falure cases
+    @resource.save! #force save to allow tests to pass. this should be modified to cater for save failure cases
        flash[:notice] = "Upload successful"
        redirect_to resources_path
 

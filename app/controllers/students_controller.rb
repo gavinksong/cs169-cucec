@@ -1,7 +1,6 @@
 class StudentsController < ApplicationController
   before_action :authenticate_student!
 
-
   # TODO: A Rubyist would refactor this method's name to create_writing
   def createwriting
     writing_sample = params[:student_writing]["essay"]
@@ -20,6 +19,6 @@ class StudentsController < ApplicationController
   end
   
   def watch
-    @resource = Resource.retrieve_video
+    @watch = Resource.watch
   end
 end
