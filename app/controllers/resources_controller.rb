@@ -9,11 +9,13 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = Resource.new(resource_params)
-    
-    @resource.save! #force save to allow tests to pass. this should be modified to cater for save failure cases
-       flash[:notice] = "Upload successful"
-       redirect_to resources_path
-
+    if @resource.save
+      flash[:notice] = "Upload successful"
+      redirect_to resources_path
+    else
+      flash[:warning] = "Upload was not successful"
+      render :new
+    end
   end
 
   def destroy
@@ -24,7 +26,7 @@ class ResourcesController < ApplicationController
   end
   
   private
-    def resource_params
+  def resource_params
     params.require(:resource).permit(:name, :attachment, :video, :audio)
   end
 end
