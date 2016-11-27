@@ -24,7 +24,6 @@ When(/^I upload "([^"]*)" for "([^"]*)" for (today|tomorrow)$/) do |type, featur
   end
   path = "public/#{day}_" + feature + "." + type
   page.attach_file("resource_attachment", path)
-  fill_in('resource_name', with: path)
   click_button 'Save Text'
 end
 
@@ -38,10 +37,10 @@ Given(/^it is tomorrow$/) do
 end
 
 Given(/^no content has been uploaded$/) do
-  if Pathname.new('public/uploads').directory?
-    Dir.foreach('public/uploads') do |item|
+  if Pathname.new('public/text').directory?
+    Dir.foreach('public/text') do |item|
       next if item == '.' or item == '..' or item == 'tmp'
-      FileUtils.rm_rf('public/uploads/' + item)
+      FileUtils.rm_rf('public/text/' + item)
     end
   end
 end
