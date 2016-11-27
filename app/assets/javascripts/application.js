@@ -16,3 +16,4 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require_tree ./channels
+//= require bootstrap-toggle 
