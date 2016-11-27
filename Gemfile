@@ -30,6 +30,9 @@ gem 'devise'
 gem 'font-awesome-rails'
 gem 'haml'
 
+#bootstrap Toggle
+gem 'bootstrap-toggle-rails'
+
 # Realtime chat gems
 gem 'redis', '~> 3.0'
 gem 'puma' # ActionCable needs a threaded server
