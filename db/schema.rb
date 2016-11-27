@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20161126053607) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "video"
     t.string   "audio"
   end
 
@@ -97,6 +98,7 @@ ActiveRecord::Schema.define(version: 20161126053607) do
 
   create_table "writings", force: :cascade do |t|
     t.text    "sample"
+    t.string  "date"
     t.integer "student_id"
   end
 
