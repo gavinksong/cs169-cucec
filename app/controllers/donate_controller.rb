@@ -1,7 +1,4 @@
 class DonateController < ApplicationController
-    def new
-    end
-    
     def create
         values = {
             business: Rails.application.secrets.paypal_business,

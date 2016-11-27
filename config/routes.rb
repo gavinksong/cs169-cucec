@@ -11,10 +11,6 @@ Rails.application.routes.draw do
   devise_for :mentors
   devise_for :students
   
-  # resources :conversations do
-  #   resources :messages
-  # end
-  
   resources :donate
   
   # students routes
@@ -38,9 +34,5 @@ Rails.application.routes.draw do
       resources :resources
     end
   end
-
-  # resources :admins do
-  #   resources :resources
-  # end
 
 end
