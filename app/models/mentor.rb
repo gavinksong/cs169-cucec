@@ -7,7 +7,6 @@ class Mentor < ApplicationRecord
   validates_format_of :email, :with => /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
 
 
-
   # realtime chat feature
   has_many :conversations, dependent: :destroy
   has_many :messages, as: :author
@@ -17,6 +16,7 @@ class Mentor < ApplicationRecord
     :mentor
   end
 
+  #availability for chat
   def update_availability(new_value)
     self.update_attribute(:is_available, new_value)
   end

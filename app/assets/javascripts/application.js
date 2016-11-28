@@ -17,3 +17,4 @@
 //= require bootstrap-sprockets
 //= require_tree ./channels
 //= require bootstrap-toggle
+//= require Mentors/mentorToggle

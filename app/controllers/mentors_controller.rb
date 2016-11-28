@@ -2,6 +2,6 @@ class MentorsController < ApplicationController
   before_action :authenticate_mentor!
 
   def available
-    current_mentor.update_availability(params[:emilio])
+    current_mentor.update_availability(params[:value])
   end
 end
