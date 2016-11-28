@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Conversations</h1>
+<% if @current_user.instance_of?Mentor %>
+    <p> Hi, you are chatting as a Mentor</p>
+<%elsif @current_user.instance_of?Student %>
+    <p>Hi, you are chatting as a Student</p>
+<%end%>
+
 <div class="panel panel-default">
   <% if @conversations.any? %>
       <div class="panel-body" id="conversations">
