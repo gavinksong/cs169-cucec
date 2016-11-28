@@ -34,7 +34,8 @@
                                         Mentor a student through instant message.
                                     </p>
                                    <a href= <%= conversations_path %> class="btn btn-default">Chat</a>
-                                  <input id="toggle-trigger" type="checkbox" data-toggle="toggle">
+                                  <input id="toggle-event" type="checkbox" data-toggle="toggle">
+                                  <div id="console-event"></div>
                                 </div>
 
                             </div>
@@ -57,4 +58,16 @@
         e.preventDefault();
         $("#wrapper").toggleClass("toggled");
     });
+
+    $(function() {
+      $('#toggle-event').change(function() {
+        $('#console-event').html('Toggle: ' + $(this).prop('checked'))
+          if($(this).prop('checked')) {
+            $.get("mentors/available", {emilio: "1"});
+          }
+
+      })
+    })
+
+
 </script>

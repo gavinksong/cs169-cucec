@@ -27,11 +27,13 @@ Rails.application.routes.draw do
   get 'mentors' => 'mentors#index'
   get 'mentors/call' => 'mentors/chat'
   get 'mentors/chat' => 'mentors/call'
+  get 'mentors/available' => 'mentors#available'
   
   # admins routes
   resources :admins do
     collection do
       resources :resources
+
     end
   end
 
