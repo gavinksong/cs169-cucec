@@ -1,6 +1,6 @@
+// This resets mentor availability after logout
 $(function() {
         $("#mentor_logout").click(function() {
-                console.log("I get HERE")
-         $.get("mentors/available", {value: "0"});
+            $.get("mentors/available", {value: "0"});
         })
 })    
