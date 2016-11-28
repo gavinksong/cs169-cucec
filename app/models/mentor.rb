@@ -17,4 +17,7 @@ class Mentor < ApplicationRecord
     :mentor
   end
 
+  def update_availability(new_value)
+    self.update_attribute(:is_available, new_value)
+  end
 end
