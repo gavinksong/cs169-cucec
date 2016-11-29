@@ -76,7 +76,8 @@
                                         Talk to an American mentor through
                                         instant messaging.
                                     </p>
-                                    <a href=<%= conversations_path %>  class="btn btn-default">Chat</a>
+                                    <!-- <a href=<%= conversations_path %>  class="btn btn-default">Chat</a> -->
+                                    <%= link_to 'Chat', conversations_path, :method => :post, :class => 'btn btn-default' %>
                                 </div>
                             </div>
                         </div>

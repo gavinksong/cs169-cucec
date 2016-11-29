@@ -22,7 +22,19 @@ class Mentor < ApplicationRecord
   end
   
   # number of mentors available for chat
-  def self.mentors_available_chat
+  def self.num_mentors_available_chat
     Mentor.where(:is_available => 1).size
   end
+  
+  def self.mentor_available_chat?
+    Mentor.where(:is_available => 1).first ? true : false
+  end
+  
+  # Returns the first mentor to be paired up with a student and remove this mentor from the available mentors list
+  def self.first_mentor_available_chat
+    mentor = Mentor.where(:is_available => 1).first
+    mentor.is_available = 0
+    return mentor
+  end
+  
 end
