@@ -14,7 +14,7 @@ end
 
 # only one admin
 Admin.create!( {
-  :email => "honglin8@gmail.com",
-  :password => "cucec2016alpha",
-  :password_confirmation => "cucec2016alpha"
+  :email => "admin1@gmail.com",
+  :password => "admin1",
+  :password_confirmation => "admin1"
 })
