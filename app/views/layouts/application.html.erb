@@ -16,9 +16,9 @@
       <br/>
     <%end%>
     
-    <% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "alert alert-#{key}" %>
-    <% end %>
+    <%= content_tag :div, alert, class: "alert alert-warning" unless alert.nil? %>
+    <%= content_tag :div, notice, class: "alert alert-info" unless notice.nil? %>
+    
     <%= yield %>
   </body>
 </html>
