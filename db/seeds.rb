@@ -6,8 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# students = Student.create([ {email: "baoskee@gmail.com", password: "foobar"}])
-# mentors = Mentor.create([email: "emilioaurea@gmail.com", password: "foobar"])
+# Create 3 students.
+(1..3).each do |n|
+  Student.create([ {email: "student#{n}@gmail.com", password: "student#{n}", password_confirmation: "student#{n}"}])
+  Mentor.create([ {email: "mentor#{n}@gmail.com", password: "mentor#{n}", password_confirmation: "mentor#{n}"}])
+end
 
 # only one admin
 Admin.create!( {
