@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   post 'students/write' => 'students#createwriting'
   get 'students/chat' => 'students#chat'
   get 'students/watch' => 'students#watch'
+  
+  resources :students
+    
 
   # mentors routes
   get 'mentors' => 'mentors#index'
@@ -29,11 +32,12 @@ Rails.application.routes.draw do
   get 'mentors/chat' => 'mentors/call'
   get 'mentors/available' => 'mentors#available'
   
+  resources :mentors
+  
   # admins routes
   resources :admins do
     collection do
       resources :resources
-
     end
   end
 
