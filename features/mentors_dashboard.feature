@@ -18,4 +18,3 @@ Feature: Mentor Dashboard
   Scenario: Accessing Chat
     Then I should see "Chat"
     When I follow "Chat"
-    Then I should be on the mentor chat page

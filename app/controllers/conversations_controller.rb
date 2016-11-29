@@ -1,5 +1,5 @@
 class ConversationsController < ApplicationController
-
+  before_action :authenticate_student!
   def index
     if current_user
       @conversations = current_user.conversations

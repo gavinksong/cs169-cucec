@@ -6,6 +6,13 @@ Given /^there exists a conversation between student "(.*)" and mentor "(.*)"$/ d
 
 end
 
-Given /^there exists a mentor$/ do
-  step 'a mentor with email "emilio_aurea@berkeley.edu" and password "foobar" exists'
+Given /^there exists a mentor who is also available to chat$/ do
+   m = Mentor.create!({:email => "email@gmail.com", :password => "mypassword", :password_confirmation => "mypassword" })
+   visit new_mentor_session_path
+   # byebug
+   fill_in 'Email', :with => 'email@gmail.com'
+   fill_in 'Password', :with => 'mypassword'
+   click_button 'Log in'
+   m.is_available = 1
+   m.save!
 end
