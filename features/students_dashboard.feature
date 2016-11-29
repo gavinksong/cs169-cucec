@@ -38,8 +38,3 @@ Feature: Student Dashboard
     Then I should see "Watch"
     When I follow "Watch"
     Then I should be on the student watch page
-
-  Scenario: Accessing chat
-    Then I should see "Chat"
-    When I follow "Chat"
-    Then I should be on the student chat page
