@@ -38,3 +38,4 @@ Feature: Student Dashboard
     Then I should see "Watch"
     When I follow "Watch"
     Then I should be on the student watch page
+    Then I should be on the student watch page
