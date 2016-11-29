@@ -5,6 +5,7 @@
     <p> Hi, you are chatting as a Mentor</p>
 <%elsif @current_user.instance_of?Student %>
     <p>Hi, you are chatting as a Student</p>
+    <p>Mentors available: <%=Mentor.mentors_available_chat%></p>
 <%end%>
 
 <div class="panel panel-default">
