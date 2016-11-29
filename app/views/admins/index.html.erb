@@ -4,3 +4,40 @@
     <button type="button" class="btn btn-secondary"><%= link_to "Upload", resources_path %></button>
 </div>
 
+<br>
+
+<div class="container col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Student</th>
+      </tr>
+   </thead>
+   <tbody>
+      <% @students.each do |student| %>
+         <tr>
+            <td><%= student.email %></td>
+            <td><%= link_to "Delete", student_path(student), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{student.email}?" %></td>
+         </tr>
+      <% end %>
+   </tbody>
+</table>
+</div>
+<div class="container col-xs-6 col-sm-6 col-md-6 col-lg-6">
+<table class = "table table-bordered table-striped">
+   <thead>
+      <tr>
+         <th>Mentors <input id="toggle-event" type="checkbox" data-toggle="toggle"></th>
+      </tr>
+      
+   </thead>
+   <tbody>
+      <% @mentors.each do |mentor| %>
+         <tr>
+            <td><%= mentor.email %></td>
+            <td><%= link_to "Delete", mentor_path(mentor), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{mentor.email}?" %></td>
+         </tr>
+      <% end %>
+   </tbody>
+</table>
+</div>

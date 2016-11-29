@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
-  before_action :authenticate_student!
-
+  before_action :authenticate_student!, except: :destroy 
+  before_action :authenticate_admin!, only: :destroy
+  
   # TODO: A Rubyist would refactor this method's name to create_writing
   def createwriting
     writing_sample = params[:student_writing]["essay"]
@@ -20,5 +21,11 @@ class StudentsController < ApplicationController
   
   def watch
     @watch = Resource.watch
+  end
+  
+  def destroy
+    student = Student.find(params[:id])
+    student.destroy
+    redirect_to :back
   end
 end
