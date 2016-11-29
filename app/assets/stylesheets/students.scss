@@ -1,0 +1,66 @@
+div.lesson-icon {
+    font-size: 100px;
+}
+
+.lesson-link {
+    border-radius: 6px;
+    border: 1px solid transparent;
+    color: #111;
+    margin: 10px;
+}
+
+.lesson-link:hover {
+    filter: brightness(85%);
+}
+
+.lesson-link:active {
+    filter: brightness(60%);
+}
+
+.lesson-link.green {
+    background-color: #318B31;
+}
+
+.lesson-link.green .glyphicon {
+    color: #8DCE8D;
+}
+
+.lesson-link.red {
+    background-color: #AE3E3E;
+}
+
+.lesson-link.red .glyphicon {
+    color: #FFAFAF;
+}
+
+.lesson-link.purple {
+    background-color: #443378;
+}
+
+.lesson-link.purple .glyphicon {
+    color: #8D81B3;
+}
+
+.lesson-link.blue {
+    background-color: #2A5B99;
+}
+
+.lesson-link.blue .glyphicon {
+    color: #6B91C1;
+}
+
+.lesson-link.yellow {
+    background-color: #E1DC1A;
+}
+
+.lesson-link.yellow .glyphicon {
+    color: #FFFB75;
+}
+
+.lesson-link.orange {
+    background-color: #E1891A;
+}
+
+.lesson-link.orange .glyphicon {
+    color: #FFC275;
+}

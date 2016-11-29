@@ -8,81 +8,90 @@
                     <!-- Student Navigation Tabs -->
                     <div class="row animatedParent">
 
-                        <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div class="service-box">
-                                <div class="service-desc">
-                                    <h5>Listening</h5>
+                        <a class="col-xs-6 col-sm-4 col-md-4" href=<%= students_listen_path %>>
+                            <div class="service-box row lesson-link purple">
+                                <div class="lesson-icon col-sm-5">
+                                    <span class="glyphicon glyphicon-headphones" aria-hidden="true"/>
+                                </div>
+                                <div class="service-desc col-sm-7">
+                                    <h5>Listen</h5>
                                     <p>
                                         Listen to English recordings.
                                     </p>
-                                    <a href= <%= students_listen_path %> class="btn btn-default">Listen</a>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div class="service-box">
-                                <div class="service-desc">
-                                    <h5>Speaking</h5>
+                        <a class="col-xs-6 col-sm-4 col-md-4" href=<%= students_speak_path %>>
+                            <div class="service-box row lesson-link yellow">
+                                <div class="lesson-icon col-sm-5">
+                                    <span class="glyphicon glyphicon-volume-down" aria-hidden="true"/>
+                                </div>
+                                <div class="service-desc col-sm-7">
+                                    <h5>Speak</h5>
                                     <p>
                                         Improve your speaking skills.
                                     </p>
-                                    <a href=<%= students_speak_path %> class="btn btn-default">Speak</a>
                                 </div>
                             </div>
-                        </div>
+                        </a>
 
-                        <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div class="service-box">
-                                <div class="service-desc">
-                                    <h5>Reading</h5>
+                        <a class="col-xs-6 col-sm-4 col-md-4" href=<%= students_read_path %>>
+                            <div class="service-box row lesson-link red">
+                                <div class="lesson-icon col-sm-5">
+                                    <span class="glyphicon glyphicon-font" aria-hidden="true"/>
+                                </div>
+                                <div class="service-desc col-sm-7">
+                                    <h5>Read</h5>
                                     <p>
                                         Compare English and Chinese texts.
                                     </p>
-                                    <a href=<%= students_read_path %>  class="btn btn-default">Read</a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div class="service-box">
-                                <div class="service-desc">
-                                    <h5>Writing</h5>
+                        </a>
+                        
+                        <a class="col-xs-6 col-sm-4 col-md-4" href=<%= students_write_path %>>
+                            <div class="service-box row lesson-link orange">
+                                <div class="lesson-icon col-sm-5">
+                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"/>
+                                </div>
+                                <div class="service-desc col-sm-7">
+                                    <h5>Write</h5>
                                     <p>
                                         Practice your English writing skills.
                                     </p>
-                                    <a href=<%= students_write_path %>  class="btn btn-default">Write</a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div class="service-box">
-                                <div class="service-desc">
-                                    <h5>Watching</h5>
+                        </a>
+                        
+                        <a class="col-xs-6 col-sm-4 col-md-4" href=<%= students_watch_path %>>
+                            <div class="service-box row lesson-link blue">
+                                <div class="lesson-icon col-sm-5">
+                                    <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"/>
+                                </div>
+                                <div class="service-desc col-sm-7">
+                                    <h5>Watch</h5>
                                     <p>
                                         Watch English movies and videos.
                                     </p>
-                                    <a href=<%= students_watch_path %> class="btn btn-default">Watch</a>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-xs-6 col-sm-4 col-md-4">
-                            <div class="service-box">
-                                <div class="service-desc">
-                                    <h5>Chatting</h5>
+                        </a>
+                        
+                        <%= link_to conversations_path, method: :post, class: "col-xs-6 col-sm-4 col-md-4" do %>
+                            <div class="service-box row lesson-link green">
+                                <div class="lesson-icon col-sm-5">
+                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"/>
+                                </div>
+                                <div class="service-desc col-sm-7">
+                                    <h5>Chat</h5>
                                     <p>
                                         Talk to an American mentor through
                                         instant messaging.
                                     </p>
-                                    <!-- <a href=<%= conversations_path %>  class="btn btn-default">Chat</a> -->
-                                    <%= link_to 'Chat', conversations_path, :method => :post, :class => 'btn btn-default' %>
                                 </div>
                             </div>
-                        </div>
-
-
+                        <% end %>
                     </div>
                 </div>
             </div>
