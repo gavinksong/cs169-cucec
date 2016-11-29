@@ -20,4 +20,9 @@ class Mentor < ApplicationRecord
   def update_availability(new_value)
     self.update_attribute(:is_available, new_value)
   end
+  
+  # number of mentors available for chat
+  def self.mentors_available_chat
+    Mentor.where(:is_available => 1).size
+  end
 end

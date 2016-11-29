@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
           user: current_user.email
       head :ok
     else
-      flash[:error] = 'Message did not save'
+      flash[:danger] = 'Message did not save'
       redirect_to conversations_path
     end
   end
