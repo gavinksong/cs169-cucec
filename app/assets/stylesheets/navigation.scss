@@ -11,9 +11,9 @@ body {
 /* Navigation Options */
 
 .service-box {
-  background: #fff;
   border-bottom: 2px solid #f7f7f7;
-  padding: 40px 20px;
+  padding-top: 20px;
+  padding-left: 10px;
 }
 
 .service-icon {
@@ -23,7 +23,6 @@ body {
 .service-desc h5 {
   text-transform: uppercase;
   font-weight: 700;
-  color: #666;
   font-size: 18px;
   margin-bottom: 10px;
 }
