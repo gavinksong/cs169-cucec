@@ -10,7 +10,7 @@ class ResourcesController < ApplicationController
   def create
     @resource = Resource.new(resource_params)
     if @resource.save
-      flash[:notice] = "Upload successful"
+      flash[:success] = "Upload successful"
       redirect_to resources_path
     else
       flash[:warning] = "Upload was not successful"
@@ -21,7 +21,7 @@ class ResourcesController < ApplicationController
   def destroy
     @resource = Resource.find(params[:id])
     @resource.delete
-    flash[:success] = "The resource #{@resource.name} has been deleted."
+    flash[:info] = "The resource #{@resource.name} has been deleted."
     redirect_to resources_path
   end
   

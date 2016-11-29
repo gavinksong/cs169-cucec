@@ -1,10 +1,4 @@
 <%= render :partial => 'shared/navigation'%>
-
-<div class = "container" style = "padding-top:20px;">
-<% flash.each do |key, value| %>
-      <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
-
 <h4>Uploads</h4>
 <div class="well">
   <h4>Text files</h4>
@@ -33,5 +27,4 @@
       <%= f.file_field :audio %>
       <%= f.submit "Save Audio", class: "btn btn-primary" %>
    <% end %>
-</div>
 </div>
