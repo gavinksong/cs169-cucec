@@ -1,12 +1,4 @@
 <%= render :partial => 'shared/navigation'%>
-
-<div class = "container" style = "padding-top:20px;">
-<% if !flash[:notice].blank? %>
-   <div class = "alert alert-info">
-      <%= flash[:notice] %>
-   </div>
-<% end %>
-
 <br />
 
 <%= link_to "New Resource", new_resource_path, class: "btn btn-primary", id: "new_resource" %>
@@ -34,4 +26,4 @@
    </tbody>
    
 </table>
-</div>
+
