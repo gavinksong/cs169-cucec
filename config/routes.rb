@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   resources :donate
 
   # #about
-  # get 'about' =>'about#index'
-  get 'about/index'
+  get '/about' =>'about#index'
+  get '/mentors/about' => 'about#index'
+  get '/students/about' => 'about#index'
   # students routes
   get 'students' => 'students#index'
   get 'students/listen' => 'students#listen'
