@@ -3,6 +3,12 @@ class AdminsController < ApplicationController
     
     def index
         @students = Student.all
-        @mentors = Mentor.all
+        
+        @sorting = params[:sort]
+        if @sorting == "online"
+            @mentors = Mentor.mentors_available_chat
+        else
+            @mentors = Mentor.all
+        end
     end
 end
