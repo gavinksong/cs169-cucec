@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   mount ActionCable.server => '/cable'
   resources :conversations, param: :slug
   resources :messages
@@ -12,7 +14,10 @@ Rails.application.routes.draw do
   devise_for :students
   
   resources :donate
-  
+
+  # #about
+  # get 'about' =>'about#index'
+  get 'about/index'
   # students routes
   get 'students' => 'students#index'
   get 'students/listen' => 'students#listen'
