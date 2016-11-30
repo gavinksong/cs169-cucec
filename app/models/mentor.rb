@@ -37,4 +37,7 @@ class Mentor < ApplicationRecord
     return mentor
   end
   
+  def self.mentors_available_chat
+    Mentor.where(:is_available => 1)
+  end
 end
