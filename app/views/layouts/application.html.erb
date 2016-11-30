@@ -9,12 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="padding-top: 50px">
     <%= render :partial => 'shared/navigation'%>
-    
-    <%- 3.times do%>
-      <br/>
-    <%end%>
     
     <% flash.each do |key, value| %>
       <%= content_tag :div, value, class: "alert alert-#{key}" %>
