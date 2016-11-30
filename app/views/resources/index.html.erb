@@ -1,29 +1,27 @@
 <%= render :partial => 'shared/navigation'%>
 <br />
 
+<div class = "container">
 <%= link_to "New Resource", new_resource_path, class: "btn btn-primary", id: "new_resource" %>
 <br />
 <br />
 
-<table class = "table table-bordered table-striped">
+<table class = "table table-bordered table-striped" style="background-color:powderblue;">
    <thead>
       <tr>
          <th>Name</th>
-         <th>Download</th>
-         <th>Delete</th>
+         <!--<th>Download</th>-->
+         <th style="width: 20%;">Delete</th>
       </tr>
    </thead>
-   
    <tbody>
       <% @resources.each do |resource| %>
          <tr>
             <td><%= resource.name %></td>
-            <td><%= link_to "Download", ""%></td>
+            <!--<td><%= link_to "Download", ""%></td>-->
             <td><%= link_to "Delete", resource_path(resource), method: :delete, class: "btn btn-danger", confirm: "Are you sure that you wish to delete #{resource.name}?" %></td>
          </tr>
-         
       <% end %>
    </tbody>
-   
 </table>
-
+</div>
