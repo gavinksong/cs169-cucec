@@ -1,6 +1,6 @@
 $(function() {
         $("#mentor_logout").click(function() {
-                console.log("I get HERE")
+            console.log("here")
          $.get("mentors/available", {value: "0"});
         })
 })    
