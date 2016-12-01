@@ -10,17 +10,28 @@ class ConversationsController < ApplicationController
 
   def new
   end
-  def create
-    conversation = Conversation.new
-    conversation.create_student(id: current_user.id)
-    # TODO: Match to random, active mentor instead of first mentor
-    conversation.create_mentor(id: Mentor.first.id)
-    conversation.save!
 
-    # reloads the page
+  def create
+    if current_user.instance_of? Mentor
+      flash[:danger] = "A student will initiate conversation."
+    else 
+      if Mentor.mentor_available_chat?
+        conversation = Conversation.new
+        conversation.create_student(id: current_student.id)
+        mentor = Mentor.first_mentor_available_chat
+        byebug
+        mentor.is_available = 0
+        mentor.save!
+        conversation.create_mentor(id: mentor.id)
+        conversation.save!
+        flash[:success] = "Congradulations! You have been paird with #{mentor.email}"
+      else
+        flash[:danger] = "Mentor is not available at the moment"
+      end
+    end
     redirect_to :back
   end
-  
+
   def show
     @conversation = Conversation.find_by(id: params[:slug])
     @messages = @conversation.messages
