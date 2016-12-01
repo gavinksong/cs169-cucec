@@ -1,19 +1,4 @@
 require 'pathname'
-path = ""
-Given(/^a "([^"]*)" file exists for "([^"]*)" for (today|tomorrow)$/) do |type, feature, day|
-  if day == "today"
-    day = Date.today.to_s
-  else
-    day = (Date.today + 1).to_s
-  end
-  path = "public/#{day}_" + feature + "." + type
-end
-
-Given(/^it has content "([^"]*)"$/) do |content|
-  File.open(path, "w+") do |f|
-    f.write(content)
-  end
-end
 
 When(/^I upload "([^"]*)" for "([^"]*)" for (today|tomorrow)$/) do |type, feature, day|
   click_link "new_resource"
@@ -65,4 +50,24 @@ Given /^I successfully upload files for (.*)$/ do |day|
     When I upload "txt" for "read_chinese" for #{day}
     Then I should see "Upload successful"
   }
+end
+
+Given(/^I haven't uploaded any files to the app$/) do
+  step "no content has been uploaded"
+end
+
+Given(/^the following files exist on my local computer with (today|tomorrow)'s date:$/) do |day, table|
+  # table is a Cucumber::MultilineArgument::DataTable
+  if day == "today"
+    day = Date.today.to_s
+  else
+    day = (Date.today + 1).to_s
+  end
+  table.hashes.each do |file|
+    path =  "public/" + day + file[:name][10, file[:name].size]
+    content = file[:content]
+    File.open(path, "w+") do |f|
+    f.write(content)
+  end
+  end
 end
