@@ -44,7 +44,7 @@
                 <li>
                     <a href="/donate/new">Donate</a>
                 </li>
-                
+
                 <% if student_signed_in? %>
                     <li>
                         <%= link_to('Logout', destroy_student_session_path, :method => :delete) %>
