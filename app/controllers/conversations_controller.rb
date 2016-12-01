@@ -16,17 +16,12 @@ class ConversationsController < ApplicationController
       flash[:danger] = "A student will initiate conversation."
     else 
       if Mentor.mentor_available_chat?
+        conversation = Conversation.new
+        conversation.create_student(id: current_student.id)
         mentor = Mentor.first_mentor_available_chat
-        prev_convos = Conversation.where(:student_id => current_student.id, :mentor_id => mentor.id).size
-        if prev_convos != 0
-          conversation = Conversation.new
-          conversation.create_student(id: current_student.id)
-          conversation.create_mentor(id: mentor.id)
-          conversation.save!
-          flash[:success] = "Congradulations! You have been paird with #{mentor.email}"
-        else
-          flash[:info] = "You have an existing chat with #{mentor.email}"
-        end
+        conversation.create_mentor(id: mentor.id)
+        conversation.save!
+        flash[:success] = "Congradulations! You have been paird with #{mentor.email}"
       else
         flash[:danger] = "Mentor is not available at the moment"
       end
