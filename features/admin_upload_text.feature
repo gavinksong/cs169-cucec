@@ -4,19 +4,18 @@ Feature: Admin can upload a .txt file
   In order to create content
   I want to be able to upload a .txt file
   Where the name of file is YYYY-MM-DD_read_english.txt and YYYY-MM-DD_chinese.txt
-  Such that students will be able to see the contents of the file in the Reading View on the given date
+  Such that students will be able to see the contents of the file in the Reading View on the given date 
 
   Background: On admin dashboard page and certain files exist
-    Given a "txt" file exists for "read_english" for today
-    And   it has content "Hello World"
-    Given a "txt" file exists for "read_chinese" for today
-    And   it has content "你好，世界"
-    Given a "txt" file exists for "read_english" for tomorrow
-    And   it has content "Thank you"
-    Given a "txt" file exists for "read_chinese" for tomorrow
-    And   it has content "谢谢"
-    Given no content has been uploaded
-    Given I am logged in as an admin
+    Given I haven't uploaded any files to the app
+    And the following files exist on my local computer with today's date:
+      | name                        | content      |
+      | YYYY-MM-DD_read_english.txt | Hello World  |
+      | YYYY-MM-DD_read_chinese.txt | 你好，世界   |
+    And the following files exist on my local computer with tomorrow's date:
+      | name                        | content      |
+      | YYYY-MM-DD_read_english.txt | Thank you    |
+      | YYYY-MM-DD_read_chinese.txt | 谢谢         |
 
   Scenario: Uploading read content that a student can see with today's date
     Given I successfully upload files for today
