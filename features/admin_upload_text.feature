@@ -16,6 +16,7 @@ Feature: Admin can upload a .txt file
       | name                        | content      |
       | YYYY-MM-DD_read_english.txt | Thank you    |
       | YYYY-MM-DD_read_chinese.txt | 谢谢         |
+    Given I am logged in as an admin
 
   Scenario: Uploading read content that a student can see with today's date
     Given I successfully upload files for today
