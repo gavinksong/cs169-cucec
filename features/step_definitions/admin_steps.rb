@@ -17,3 +17,15 @@ Given /^I am logged out as an admin$/ do
     step 'I should be on the landing page'
   end
 end
+
+Then(/^I should see admin dashboard$/) do
+  expect(page).to have_css 'table'
+  
+  within 'table#students-table' do
+    expect(page).to have_text 'Students'
+  end
+  
+  within 'table#mentors-table' do
+    expect(page).to have_text 'Mentors'
+  end
+end
