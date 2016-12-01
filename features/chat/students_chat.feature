@@ -7,9 +7,11 @@ Feature: Student Chat
   Background:
     Given there exists a mentor who is also available to chat
 
-  Scenario: Only students can access conversations page
-    Given I am on the student chat page
-    Then I should be on the student login page
+  # Scenario: Only students can access conversations page
+  #   Given I am on the student chat page
+  #   Then I should be on the student login page
+  
+  # We are reverting for now.
 
   Scenario: Starting a new conversation
     Given I am logged in as a student
