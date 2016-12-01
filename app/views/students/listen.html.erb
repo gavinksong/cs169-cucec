@@ -2,3 +2,12 @@
   <h1>Listen to Audio</h1>
   <p><%= audio_tag(src = @listen, autoplay: false, controls: true)%></p>
 </section
+
+<section class="container">
+  <h1>Listen to Audio</h1>
+    <% unless @listen.empty? %>
+      <%= audio_tag(src = @listen, autoplay: false, controls: true, :id => "audio_available")%>
+    <% else %>
+      <p>Sorry, no content has been uploaded for today.</p>
+    <%end%>
+</section>
