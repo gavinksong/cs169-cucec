@@ -4,17 +4,17 @@ Feature: Only an admin user should be able to access admin dashboard (and other 
   I should not be able to access the admin dashboard
   
   Scenario: student cannot access admin resources
-    Given I am loggedin as a student
-    When I visit the admins dashboard
-    Then I should see "Unathorized Access"
-    
+    Given I am logged in as a student
+    When I go to the admin dashboard page
+    Then I should see "You need to sign in or sign up before continuing."
+
   Scenario: mentor cannot access admin resources
-    Given I am loggedin as a mentor
-    When I visit the admins dashboard
-    Then I should see "Unathorized Access"
-    
+    Given I am logged in as a mentor
+    When I go to the admin dashboard page
+    Then I should see "You need to sign in or sign up before continuing."
+
   Scenario: admin cannot access admin resources
-    Given I am loggedin as an admin
-    When I visit the admins dashboard
+    Given I am logged in as an admin
+    When I go to the admin dashboard page
     Then I should see "Upload"
-    And I should see "Table"
+    And I should see admin dashboard
