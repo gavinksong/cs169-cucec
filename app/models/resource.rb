@@ -31,4 +31,19 @@ class Resource < ApplicationRecord
       file_name = "#{Date.today.to_s}_watch.mp4"
       return Pathname.new(file_path).exist? ? file_name : ""
     end
+    
+    def delete_file
+        file_type = self[:attachment].split(".")[1]
+        case file_type
+            when "txt"
+                path = "#{Rails.public_path}/text/" + self[:attachment]
+            when "mp3"
+                path = "#{Rails.public_path}/audios/" + self[:attachment]
+            when "mp4"
+                path = "#{Rails.public_path}/videos/" + self[:attachment]
+            else
+                return
+        end
+        FileUtils.rm_rf(path)
+    end
 end
