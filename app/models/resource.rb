@@ -6,6 +6,17 @@ class Resource < ApplicationRecord
     mount_uploader :video, VideoUploader
     mount_uploader :audio, AudioUploader
     
+    def self.speak_audio
+        file_name = "#{Date.today.to_s}_speak_audio.mp3"
+        file_path = "#{Rails.public_path}/audios/#{file_name}"
+        return Pathname.new(file_path).exist? ? file_name : ""
+    end
+    
+    def self.speak_text
+        file = "#{Rails.public_path}/text/#{Date.today.to_s}_speak_text.txt"
+        return Pathname.new(file).exist? ? file : "public/empty.txt"
+    end
+    
     def self.read_english
         # YYYY-MM-DD_read_english.txt
         file = "#{Rails.public_path}/text/#{Date.today.to_s}_read_english.txt"
