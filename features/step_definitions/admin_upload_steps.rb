@@ -24,6 +24,18 @@ When(/^I upload audio "([^"]*)" for "([^"]*)" for (today|tomorrow)$/) do |type, 
   click_button 'Save Audio'
 end
 
+When(/^I upload video "([^"]*)" for "([^"]*)" for (today|tomorrow)$/) do |type, feature, day|
+  click_link "new_resource"
+  if day == "today"
+    day = Date.today.to_s
+  else
+    day = (Date.today + 1).to_s
+  end
+  path = "public/#{day}_" + feature + "." + type
+  page.attach_file("resource_video", path)
+  click_button 'Save Video'
+end
+
 Given(/^it is tomorrow$/) do
   class Date
     @tom = self.today + 1
@@ -60,6 +72,12 @@ Given(/^no video content has been uploaded$/) do
   end
 end
 
+Given(/^I haven't uploaded any files to the app$/) do
+  step "no text content has been uploaded"
+  step "no audio content has been uploaded"
+  step "no video content has been uploaded"
+end
+
 Then (/^Delete all files$/) do
   step "I haven't uploaded any files to the app"
   Dir.foreach('public') do |item|
@@ -93,14 +111,22 @@ Given /^I successfully upload audio files for (.*)$/ do |day|
   }
 end
 
-Given(/^I haven't uploaded any files to the app$/) do
-  step "no text content has been uploaded"
-  step "no audio content has been uploaded"
-  step "no video content has been uploaded"
+Given /^I successfully upload video files for (.*)$/ do |day|
+  steps %{
+    Then I should be on the admin dashboard page
+    When I follow "Upload"
+    Then I should be on the Upload page
+    When I upload video "mp4" for "watch" for #{day}
+    Then I should see "Upload successful"
+  }
 end
 
 Then(/^I should see an audio file$/) do
   page.should have_css "#audio_available"
+end
+
+Then(/^I should see an video file$/) do
+  page.should have_css "#video_available"
 end
 
 Given(/^the following files exist on my local computer with (today|tomorrow)'s date:$/) do |day, table|

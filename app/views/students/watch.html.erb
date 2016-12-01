@@ -1,4 +1,8 @@
 <section class="container">
   <h1>Watch Video</h1>
-  <p><%= video_tag(src = @watch, autoplay: false, controls: true)%></p>
-</section
+    <% unless @watch.empty? %>
+      <%= video_tag(src = @watch, autoplay: false, controls: true, :id => "video_available")%>
+    <% else %>
+      <p>Sorry, no content has been uploaded for today.</p>
+    <%end%>
+</section>
