@@ -33,7 +33,6 @@ class Mentor < ApplicationRecord
   # Returns the first mentor to be paired up with a student and remove this mentor from the available mentors list
   def self.first_mentor_available_chat
     mentor = Mentor.where(:is_available => 1).first
-    mentor.is_available = 0
     return mentor
   end
   
