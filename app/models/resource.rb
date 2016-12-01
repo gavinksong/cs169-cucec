@@ -33,14 +33,22 @@ class Resource < ApplicationRecord
     end
     
     def delete_file
-        file_type = self[:attachment].split(".")[1]
+        file_name = nil
+        types = [self[:attachment], self[:video], self[:audio]]
+        types.each do |t|
+            if file_name != nil
+                break
+            end
+            file_name = t
+        end
+        file_type = file_name.split(".")[1]
         case file_type
             when "txt"
-                path = "#{Rails.public_path}/text/" + self[:attachment]
+                path = "#{Rails.public_path}/text/" + file_name
             when "mp3"
-                path = "#{Rails.public_path}/audios/" + self[:attachment]
+                path = "#{Rails.public_path}/audios/" + file_name
             when "mp4"
-                path = "#{Rails.public_path}/videos/" + self[:attachment]
+                path = "#{Rails.public_path}/videos/" + file_name
             else
                 return
         end
