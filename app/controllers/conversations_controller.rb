@@ -19,7 +19,6 @@ class ConversationsController < ApplicationController
         conversation = Conversation.new
         conversation.create_student(id: current_student.id)
         mentor = Mentor.first_mentor_available_chat
-        byebug
         mentor.is_available = 0
         mentor.save!
         conversation.create_mentor(id: mentor.id)
