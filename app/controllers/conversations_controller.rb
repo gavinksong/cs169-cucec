@@ -23,7 +23,7 @@ class ConversationsController < ApplicationController
         mentor.save!
         conversation.create_mentor(id: mentor.id)
         conversation.save!
-        flash[:success] = "Congratulations! You have been paird with #{mentor.email}"
+        flash[:success] = "Congratulations! You have been paired with #{mentor.email}"
       else
         flash[:danger] = "Mentor is not available at the moment"
       end
