@@ -10,3 +10,4 @@ A web app that helps foreign scholars and students to learn English and U.S. Cul
 
 Guideline website: https://saasbook.github.io/cs169-f16-projects/#8
 
+Team: Gavin Song, Kseniia Ryuma, Emilio Aurea, Samuel Karani, Yadel Abraham, Bao Mai
