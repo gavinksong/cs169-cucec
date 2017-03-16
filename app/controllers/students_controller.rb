@@ -15,6 +15,11 @@ class StudentsController < ApplicationController
     @read_chinese = Resource.read_chinese
   end
   
+  def speak
+    @text = Resource.speak_text
+    @audio = Resource.speak_audio
+  end
+  
   def listen
     @listen = Resource.listen
   end
